@@ -161,13 +161,8 @@ if __name__ == "__main__":
         model.set_dict(state_dict)
         print("Loaded parameters from %s" % args.params_path)
 
+
     #
-    trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
-    trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
-
-    testa = pd.read_csv("../xfdata/test.csv", sep="\t", header=None, nrows=args.cN)
-
-
     def get_predict(data, label="", name=""):
         label_map = {0: 'dissimilar', 1: 'similar'}
         result_map = {_v: _k for _k, _v in label_map.items()}
@@ -190,9 +185,18 @@ if __name__ == "__main__":
         else:
             return result
 
+    # Predict Data
+    trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
+    trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
 
     get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
     get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
+    
+    # 5
+    test5 = pd.read_csv("../xfdata/5/test.csv", sep="\t", header=None, nrows=args.cN)
+    test5 = get_predict(test5[[0, 1]].to_numpy())
+    pd.DataFrame(test5).to_csv("../prediction_result/result5.csv", index=False, header=False)
+    # Predict Data
 
-    testaR = get_predict(testa[[0, 1]].to_numpy())
-    pd.DataFrame(testaR).to_csv("../prediction_result/result.csv", index=False, header=False)
+
+

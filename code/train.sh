@@ -1,4 +1,5 @@
 
+rm -rf log/*
 python train/cdata.py
 
 batch=100
