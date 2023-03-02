@@ -20,6 +20,7 @@ Python 3.7.4，详见requirements.txt
 | 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | lcqmc     | 0.7722  | 2023-03-02 21:42       |
 | 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | bq_corpus | 0.6331  | 2023-03-02 21:42       |
 | 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | paws-x    | 0.4965  | 2023-03-02 21:42       |
+| Total | | 0.6828 | 2023-03-02 |
 
 跨领域迁移的文本语义匹配
 
