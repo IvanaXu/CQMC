@@ -1,150 +1,475 @@
-[2023-03-02 22:59:17,476] [    INFO] - We are using <class 'paddlenlp.transformers.ernie.modeling.ErnieModel'> to load 'ernie-3.0-medium-zh'.
-[2023-03-02 22:59:17,477] [    INFO] - Already cached /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/ernie_3.0_medium_zh.pdparams
-W0302 22:59:17.480527 29414 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 7.0, Driver API Version: 11.2, Runtime API Version: 11.2
-W0302 22:59:17.484732 29414 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
-[2023-03-02 22:59:20,579] [    INFO] - We are using <class 'paddlenlp.transformers.ernie.tokenizer.ErnieTokenizer'> to load 'ernie-3.0-medium-zh'.
-[2023-03-02 22:59:20,580] [    INFO] - Already cached /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/ernie_3.0_medium_zh_vocab.txt
-[2023-03-02 22:59:20,606] [    INFO] - tokenizer config file saved in /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/tokenizer_config.json
-[2023-03-02 22:59:20,607] [    INFO] - Special tokens file saved in /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/special_tokens_map.json
-global step 10, epoch: 1, batch: 10, loss: 0.55993, accu: 0.5625, precision: 0.5882, recall: 0.6818, f1: 0.6316, speed: 4.73 step/s
-global step 20, epoch: 1, batch: 20, loss: 0.70234, accu: 0.5906, precision: 0.6044, recall: 0.6509, f1: 0.6268, speed: 13.43 step/s
-global step 30, epoch: 1, batch: 30, loss: 0.82133, accu: 0.5948, precision: 0.6019, recall: 0.6419, f1: 0.6212, speed: 12.73 step/s
-global step 40, epoch: 1, batch: 40, loss: 0.56543, accu: 0.6000, precision: 0.6103, recall: 0.6681, f1: 0.6379, speed: 13.57 step/s
-global step 50, epoch: 1, batch: 50, loss: 0.64903, accu: 0.6069, precision: 0.6142, recall: 0.6635, f1: 0.6379, speed: 12.94 step/s
-global step 60, epoch: 1, batch: 60, loss: 0.56998, accu: 0.6089, precision: 0.6201, recall: 0.6637, f1: 0.6412, speed: 12.91 step/s
-global step 70, epoch: 1, batch: 70, loss: 0.58246, accu: 0.6116, precision: 0.6210, recall: 0.6695, f1: 0.6443, speed: 12.14 step/s
-global step 80, epoch: 1, batch: 80, loss: 0.61311, accu: 0.6102, precision: 0.6190, recall: 0.6696, f1: 0.6433, speed: 12.54 step/s
-global step 90, epoch: 1, batch: 90, loss: 0.69150, accu: 0.6128, precision: 0.6211, recall: 0.6645, f1: 0.6421, speed: 12.07 step/s
-global step 100, epoch: 1, batch: 100, loss: 0.60372, accu: 0.6169, precision: 0.6262, recall: 0.6607, f1: 0.6430, speed: 13.22 step/s
-global step 110, epoch: 1, batch: 110, loss: 0.71164, accu: 0.6179, precision: 0.6269, recall: 0.6667, f1: 0.6461, speed: 11.73 step/s
-global step 120, epoch: 1, batch: 120, loss: 0.70100, accu: 0.6195, precision: 0.6275, recall: 0.6721, f1: 0.6491, speed: 12.62 step/s
-global step 130, epoch: 1, batch: 130, loss: 0.55841, accu: 0.6226, precision: 0.6320, recall: 0.6668, f1: 0.6489, speed: 12.35 step/s
-global step 140, epoch: 1, batch: 140, loss: 0.48082, accu: 0.6288, precision: 0.6396, recall: 0.6671, f1: 0.6530, speed: 13.18 step/s
-global step 150, epoch: 1, batch: 150, loss: 0.46069, accu: 0.6329, precision: 0.6428, recall: 0.6714, f1: 0.6568, speed: 12.16 step/s
-global step 160, epoch: 1, batch: 160, loss: 0.50067, accu: 0.6359, precision: 0.6443, recall: 0.6780, f1: 0.6607, speed: 12.79 step/s
-global step 170, epoch: 1, batch: 170, loss: 0.59705, accu: 0.6368, precision: 0.6449, recall: 0.6744, f1: 0.6593, speed: 12.83 step/s
-global step 180, epoch: 1, batch: 180, loss: 0.52984, accu: 0.6427, precision: 0.6516, recall: 0.6754, f1: 0.6633, speed: 13.77 step/s
-global step 190, epoch: 1, batch: 190, loss: 0.51173, accu: 0.6487, precision: 0.6576, recall: 0.6755, f1: 0.6665, speed: 12.27 step/s
-global step 200, epoch: 1, batch: 200, loss: 0.57103, accu: 0.6498, precision: 0.6580, recall: 0.6807, f1: 0.6691, speed: 12.84 step/s
-eval loss: 0.50840, accu: 0.7564, precision: 0.7882, recall: 0.7478, f1: 0.7675
+[2023-03-03 01:53:26,667] [    INFO] - We are using <class 'paddlenlp.transformers.ernie.modeling.ErnieModel'> to load 'ernie-3.0-medium-zh'.
+[2023-03-03 01:53:26,668] [    INFO] - Already cached /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/ernie_3.0_medium_zh.pdparams
+W0303 01:53:26.671988  1989 gpu_resources.cc:61] Please NOTE: device: 0, GPU Compute Capability: 8.0, Driver API Version: 11.2, Runtime API Version: 11.2
+W0303 01:53:26.674749  1989 gpu_resources.cc:91] device: 0, cuDNN Version: 8.2.
+[2023-03-03 01:53:29,031] [    INFO] - We are using <class 'paddlenlp.transformers.ernie.tokenizer.ErnieTokenizer'> to load 'ernie-3.0-medium-zh'.
+[2023-03-03 01:53:29,031] [    INFO] - Already cached /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/ernie_3.0_medium_zh_vocab.txt
+[2023-03-03 01:53:29,055] [    INFO] - tokenizer config file saved in /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/tokenizer_config.json
+[2023-03-03 01:53:29,056] [    INFO] - Special tokens file saved in /home/aistudio/.paddlenlp/models/ernie-3.0-medium-zh/special_tokens_map.json
+global step 10, epoch: 1, batch: 10, loss: 0.67073, accu: 0.5360, precision: 0.5623, recall: 0.5655, f1: 0.5639, speed: 2.16 step/s
+global step 20, epoch: 1, batch: 20, loss: 0.66046, accu: 0.5567, precision: 0.5778, recall: 0.5737, f1: 0.5757, speed: 6.77 step/s
+global step 30, epoch: 1, batch: 30, loss: 0.67825, accu: 0.5795, precision: 0.5947, recall: 0.5942, f1: 0.5944, speed: 6.67 step/s
+global step 40, epoch: 1, batch: 40, loss: 0.59043, accu: 0.6016, precision: 0.6165, recall: 0.6184, f1: 0.6175, speed: 6.30 step/s
+global step 50, epoch: 1, batch: 50, loss: 0.58436, accu: 0.6175, precision: 0.6332, recall: 0.6304, f1: 0.6318, speed: 6.49 step/s
+global step 60, epoch: 1, batch: 60, loss: 0.58871, accu: 0.6298, precision: 0.6464, recall: 0.6420, f1: 0.6442, speed: 6.61 step/s
+global step 70, epoch: 1, batch: 70, loss: 0.59350, accu: 0.6413, precision: 0.6571, recall: 0.6528, f1: 0.6549, speed: 6.44 step/s
+global step 80, epoch: 1, batch: 80, loss: 0.56871, accu: 0.6524, precision: 0.6682, recall: 0.6661, f1: 0.6671, speed: 6.32 step/s
+global step 90, epoch: 1, batch: 90, loss: 0.56742, accu: 0.6606, precision: 0.6762, recall: 0.6743, f1: 0.6753, speed: 5.38 step/s
+global step 100, epoch: 1, batch: 100, loss: 0.60138, accu: 0.6671, precision: 0.6813, recall: 0.6815, f1: 0.6814, speed: 6.61 step/s
+global step 110, epoch: 1, batch: 110, loss: 0.55664, accu: 0.6742, precision: 0.6879, recall: 0.6887, f1: 0.6883, speed: 6.57 step/s
+global step 120, epoch: 1, batch: 120, loss: 0.47772, accu: 0.6819, precision: 0.6955, recall: 0.6970, f1: 0.6963, speed: 6.60 step/s
+global step 130, epoch: 1, batch: 130, loss: 0.52030, accu: 0.6879, precision: 0.7012, recall: 0.7035, f1: 0.7024, speed: 6.54 step/s
+global step 140, epoch: 1, batch: 140, loss: 0.47999, accu: 0.6931, precision: 0.7062, recall: 0.7116, f1: 0.7089, speed: 6.66 step/s
+global step 150, epoch: 1, batch: 150, loss: 0.50212, accu: 0.6984, precision: 0.7115, recall: 0.7161, f1: 0.7138, speed: 6.65 step/s
+global step 160, epoch: 1, batch: 160, loss: 0.47527, accu: 0.7023, precision: 0.7141, recall: 0.7218, f1: 0.7179, speed: 6.80 step/s
+global step 170, epoch: 1, batch: 170, loss: 0.45961, accu: 0.7058, precision: 0.7172, recall: 0.7253, f1: 0.7212, speed: 6.74 step/s
+global step 180, epoch: 1, batch: 180, loss: 0.49334, accu: 0.7101, precision: 0.7218, recall: 0.7284, f1: 0.7251, speed: 6.76 step/s
+global step 190, epoch: 1, batch: 190, loss: 0.51243, accu: 0.7136, precision: 0.7254, recall: 0.7330, f1: 0.7292, speed: 6.77 step/s
+global step 200, epoch: 1, batch: 200, loss: 0.46861, accu: 0.7171, precision: 0.7287, recall: 0.7372, f1: 0.7329, speed: 6.77 step/s
+eval loss: 0.40134, accu: 0.8134, precision: 0.8440, recall: 0.8010, f1: 0.8219
 
-[2023-03-02 22:59:45,585] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
-[2023-03-02 22:59:45,585] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
-global step 210, epoch: 1, batch: 210, loss: 0.52650, accu: 0.7469, precision: 0.7707, recall: 0.7289, f1: 0.7492, speed: 1.15 step/s
-global step 220, epoch: 1, batch: 220, loss: 0.42922, accu: 0.7297, precision: 0.7500, recall: 0.7478, f1: 0.7489, speed: 12.30 step/s
-global step 230, epoch: 1, batch: 230, loss: 0.58025, accu: 0.7177, precision: 0.7366, recall: 0.7294, f1: 0.7330, speed: 13.21 step/s
-global step 240, epoch: 1, batch: 240, loss: 0.47441, accu: 0.7305, precision: 0.7481, recall: 0.7359, f1: 0.7420, speed: 13.14 step/s
-global step 250, epoch: 1, batch: 250, loss: 0.59062, accu: 0.7262, precision: 0.7420, recall: 0.7241, f1: 0.7329, speed: 13.66 step/s
-global step 260, epoch: 1, batch: 260, loss: 0.57079, accu: 0.7167, precision: 0.7282, recall: 0.7267, f1: 0.7275, speed: 12.77 step/s
-global step 270, epoch: 1, batch: 270, loss: 0.48377, accu: 0.7174, precision: 0.7249, recall: 0.7306, f1: 0.7277, speed: 13.86 step/s
-global step 280, epoch: 1, batch: 280, loss: 0.50341, accu: 0.7273, precision: 0.7322, recall: 0.7378, f1: 0.7350, speed: 12.66 step/s
-global step 290, epoch: 1, batch: 290, loss: 0.63566, accu: 0.7330, precision: 0.7384, recall: 0.7537, f1: 0.7460, speed: 12.34 step/s
-global step 300, epoch: 1, batch: 300, loss: 0.48327, accu: 0.7362, precision: 0.7424, recall: 0.7584, f1: 0.7503, speed: 12.96 step/s
-global step 310, epoch: 1, batch: 310, loss: 0.48794, accu: 0.7347, precision: 0.7389, recall: 0.7622, f1: 0.7504, speed: 11.96 step/s
-global step 320, epoch: 1, batch: 320, loss: 0.49620, accu: 0.7372, precision: 0.7424, recall: 0.7540, f1: 0.7482, speed: 12.09 step/s
-global step 330, epoch: 1, batch: 330, loss: 0.56620, accu: 0.7382, precision: 0.7436, recall: 0.7543, f1: 0.7489, speed: 12.35 step/s
-global step 340, epoch: 1, batch: 340, loss: 0.47233, accu: 0.7397, precision: 0.7446, recall: 0.7630, f1: 0.7537, speed: 12.45 step/s
-global step 350, epoch: 1, batch: 350, loss: 0.47656, accu: 0.7421, precision: 0.7468, recall: 0.7659, f1: 0.7562, speed: 13.57 step/s
-global step 360, epoch: 1, batch: 360, loss: 0.53952, accu: 0.7404, precision: 0.7460, recall: 0.7652, f1: 0.7555, speed: 13.33 step/s
-global step 370, epoch: 1, batch: 370, loss: 0.44911, accu: 0.7392, precision: 0.7424, recall: 0.7672, f1: 0.7546, speed: 12.60 step/s
-global step 380, epoch: 1, batch: 380, loss: 0.54076, accu: 0.7398, precision: 0.7435, recall: 0.7679, f1: 0.7555, speed: 11.75 step/s
-global step 390, epoch: 1, batch: 390, loss: 0.51735, accu: 0.7421, precision: 0.7454, recall: 0.7711, f1: 0.7580, speed: 13.27 step/s
-global step 400, epoch: 1, batch: 400, loss: 0.56250, accu: 0.7430, precision: 0.7449, recall: 0.7711, f1: 0.7578, speed: 13.01 step/s
-eval loss: 0.45886, accu: 0.7828, precision: 0.7772, recall: 0.8356, f1: 0.8053
+[2023-03-03 01:54:06,653] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:54:06,653] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 210, epoch: 1, batch: 210, loss: 0.44520, accu: 0.7770, precision: 0.7824, recall: 0.8030, f1: 0.7926, speed: 1.86 step/s
+global step 220, epoch: 1, batch: 220, loss: 0.44625, accu: 0.7873, precision: 0.7914, recall: 0.8126, f1: 0.8019, speed: 6.74 step/s
+global step 230, epoch: 1, batch: 230, loss: 0.42394, accu: 0.7915, precision: 0.7944, recall: 0.8167, f1: 0.8054, speed: 6.74 step/s
+global step 240, epoch: 1, batch: 240, loss: 0.44039, accu: 0.7919, precision: 0.7969, recall: 0.8166, f1: 0.8066, speed: 6.94 step/s
+global step 250, epoch: 1, batch: 250, loss: 0.39238, accu: 0.7986, precision: 0.8036, recall: 0.8217, f1: 0.8125, speed: 6.76 step/s
+global step 260, epoch: 1, batch: 260, loss: 0.37280, accu: 0.8030, precision: 0.8091, recall: 0.8226, f1: 0.8158, speed: 6.68 step/s
+global step 270, epoch: 1, batch: 270, loss: 0.41778, accu: 0.8041, precision: 0.8085, recall: 0.8280, f1: 0.8181, speed: 6.84 step/s
+global step 280, epoch: 1, batch: 280, loss: 0.42437, accu: 0.8042, precision: 0.8078, recall: 0.8286, f1: 0.8181, speed: 6.54 step/s
+global step 290, epoch: 1, batch: 290, loss: 0.38897, accu: 0.8045, precision: 0.8076, recall: 0.8288, f1: 0.8181, speed: 6.73 step/s
+global step 300, epoch: 1, batch: 300, loss: 0.40620, accu: 0.8040, precision: 0.8078, recall: 0.8263, f1: 0.8170, speed: 6.76 step/s
+global step 310, epoch: 1, batch: 310, loss: 0.36466, accu: 0.8056, precision: 0.8095, recall: 0.8280, f1: 0.8187, speed: 6.71 step/s
+global step 320, epoch: 1, batch: 320, loss: 0.36715, accu: 0.8077, precision: 0.8109, recall: 0.8305, f1: 0.8206, speed: 6.69 step/s
+global step 330, epoch: 1, batch: 330, loss: 0.39218, accu: 0.8083, precision: 0.8119, recall: 0.8303, f1: 0.8210, speed: 6.83 step/s
+global step 340, epoch: 1, batch: 340, loss: 0.39081, accu: 0.8082, precision: 0.8115, recall: 0.8311, f1: 0.8212, speed: 6.80 step/s
+global step 350, epoch: 1, batch: 350, loss: 0.36412, accu: 0.8082, precision: 0.8114, recall: 0.8308, f1: 0.8210, speed: 6.72 step/s
+global step 360, epoch: 1, batch: 360, loss: 0.33872, accu: 0.8090, precision: 0.8127, recall: 0.8303, f1: 0.8214, speed: 6.73 step/s
+global step 370, epoch: 1, batch: 370, loss: 0.40190, accu: 0.8103, precision: 0.8134, recall: 0.8318, f1: 0.8225, speed: 6.79 step/s
+global step 380, epoch: 1, batch: 380, loss: 0.41794, accu: 0.8117, precision: 0.8145, recall: 0.8329, f1: 0.8236, speed: 6.71 step/s
+global step 390, epoch: 1, batch: 390, loss: 0.42748, accu: 0.8122, precision: 0.8156, recall: 0.8329, f1: 0.8242, speed: 6.41 step/s
+global step 400, epoch: 1, batch: 400, loss: 0.38440, accu: 0.8137, precision: 0.8165, recall: 0.8339, f1: 0.8251, speed: 6.39 step/s
+eval loss: 0.36176, accu: 0.8380, precision: 0.8344, recall: 0.8717, f1: 0.8526
 
-[2023-03-02 23:00:10,460] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
-[2023-03-02 23:00:10,460] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
-global step 410, epoch: 1, batch: 410, loss: 0.46590, accu: 0.7625, precision: 0.7487, recall: 0.8514, f1: 0.7968, speed: 0.99 step/s
-global step 420, epoch: 1, batch: 420, loss: 0.49180, accu: 0.7734, precision: 0.7769, recall: 0.8150, f1: 0.7955, speed: 11.97 step/s
-global step 430, epoch: 1, batch: 430, loss: 0.35040, accu: 0.7719, precision: 0.7661, recall: 0.8189, f1: 0.7916, speed: 14.01 step/s
-global step 440, epoch: 1, batch: 440, loss: 0.42517, accu: 0.7672, precision: 0.7705, recall: 0.8000, f1: 0.7850, speed: 12.77 step/s
-global step 450, epoch: 1, batch: 450, loss: 0.32265, accu: 0.7725, precision: 0.7691, recall: 0.8060, f1: 0.7871, speed: 13.27 step/s
-global step 460, epoch: 1, batch: 460, loss: 0.45200, accu: 0.7786, precision: 0.7752, recall: 0.8056, f1: 0.7901, speed: 12.59 step/s
-global step 470, epoch: 1, batch: 470, loss: 0.35251, accu: 0.7830, precision: 0.7809, recall: 0.8142, f1: 0.7972, speed: 11.99 step/s
-global step 480, epoch: 1, batch: 480, loss: 0.35627, accu: 0.7824, precision: 0.7813, recall: 0.8187, f1: 0.7996, speed: 13.02 step/s
-global step 490, epoch: 1, batch: 490, loss: 0.57059, accu: 0.7809, precision: 0.7805, recall: 0.8168, f1: 0.7982, speed: 13.40 step/s
-global step 500, epoch: 1, batch: 500, loss: 0.49964, accu: 0.7788, precision: 0.7792, recall: 0.8149, f1: 0.7967, speed: 13.99 step/s
-global step 510, epoch: 1, batch: 510, loss: 0.51522, accu: 0.7790, precision: 0.7799, recall: 0.8188, f1: 0.7989, speed: 12.28 step/s
-global step 520, epoch: 1, batch: 520, loss: 0.54206, accu: 0.7771, precision: 0.7775, recall: 0.8148, f1: 0.7957, speed: 12.83 step/s
-global step 530, epoch: 1, batch: 530, loss: 0.54456, accu: 0.7757, precision: 0.7787, recall: 0.8099, f1: 0.7940, speed: 14.29 step/s
-global step 540, epoch: 1, batch: 540, loss: 0.59296, accu: 0.7754, precision: 0.7784, recall: 0.8096, f1: 0.7937, speed: 13.63 step/s
-global step 550, epoch: 1, batch: 550, loss: 0.56626, accu: 0.7773, precision: 0.7785, recall: 0.8089, f1: 0.7934, speed: 13.43 step/s
-global step 560, epoch: 1, batch: 560, loss: 0.52289, accu: 0.7779, precision: 0.7792, recall: 0.8105, f1: 0.7946, speed: 13.05 step/s
-global step 570, epoch: 1, batch: 570, loss: 0.40855, accu: 0.7785, precision: 0.7788, recall: 0.8126, f1: 0.7953, speed: 13.64 step/s
-global step 580, epoch: 1, batch: 580, loss: 0.44732, accu: 0.7785, precision: 0.7797, recall: 0.8099, f1: 0.7945, speed: 12.06 step/s
-global step 590, epoch: 1, batch: 590, loss: 0.47059, accu: 0.7762, precision: 0.7771, recall: 0.8074, f1: 0.7919, speed: 13.28 step/s
-global step 600, epoch: 1, batch: 600, loss: 0.65120, accu: 0.7762, precision: 0.7772, recall: 0.8076, f1: 0.7921, speed: 12.76 step/s
-eval loss: 0.49542, accu: 0.7588, precision: 0.7137, recall: 0.9208, f1: 0.8041
+[2023-03-03 01:54:40,442] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:54:40,442] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 410, epoch: 1, batch: 410, loss: 0.39630, accu: 0.8185, precision: 0.8341, recall: 0.8271, f1: 0.8306, speed: 1.84 step/s
+global step 420, epoch: 1, batch: 420, loss: 0.40120, accu: 0.8187, precision: 0.8295, recall: 0.8299, f1: 0.8297, speed: 6.97 step/s
+global step 430, epoch: 1, batch: 430, loss: 0.35357, accu: 0.8192, precision: 0.8270, recall: 0.8360, f1: 0.8315, speed: 6.97 step/s
+global step 440, epoch: 1, batch: 440, loss: 0.46686, accu: 0.8207, precision: 0.8297, recall: 0.8336, f1: 0.8317, speed: 6.82 step/s
+global step 450, epoch: 1, batch: 450, loss: 0.42372, accu: 0.8202, precision: 0.8296, recall: 0.8346, f1: 0.8321, speed: 6.72 step/s
+global step 460, epoch: 1, batch: 460, loss: 0.37006, accu: 0.8198, precision: 0.8272, recall: 0.8339, f1: 0.8305, speed: 6.78 step/s
+global step 470, epoch: 1, batch: 470, loss: 0.39508, accu: 0.8206, precision: 0.8276, recall: 0.8355, f1: 0.8316, speed: 6.75 step/s
+global step 480, epoch: 1, batch: 480, loss: 0.38253, accu: 0.8200, precision: 0.8271, recall: 0.8351, f1: 0.8311, speed: 6.67 step/s
+global step 490, epoch: 1, batch: 490, loss: 0.35457, accu: 0.8221, precision: 0.8294, recall: 0.8355, f1: 0.8325, speed: 6.72 step/s
+global step 500, epoch: 1, batch: 500, loss: 0.34655, accu: 0.8234, precision: 0.8308, recall: 0.8351, f1: 0.8329, speed: 6.69 step/s
+global step 510, epoch: 1, batch: 510, loss: 0.37644, accu: 0.8243, precision: 0.8315, recall: 0.8358, f1: 0.8336, speed: 6.82 step/s
+global step 520, epoch: 1, batch: 520, loss: 0.36204, accu: 0.8253, precision: 0.8325, recall: 0.8383, f1: 0.8354, speed: 6.83 step/s
+global step 530, epoch: 1, batch: 530, loss: 0.37225, accu: 0.8254, precision: 0.8325, recall: 0.8378, f1: 0.8351, speed: 6.85 step/s
+global step 540, epoch: 1, batch: 540, loss: 0.36175, accu: 0.8258, precision: 0.8317, recall: 0.8402, f1: 0.8359, speed: 6.81 step/s
+global step 550, epoch: 1, batch: 550, loss: 0.35492, accu: 0.8262, precision: 0.8328, recall: 0.8398, f1: 0.8363, speed: 6.60 step/s
+global step 560, epoch: 1, batch: 560, loss: 0.38112, accu: 0.8259, precision: 0.8329, recall: 0.8390, f1: 0.8359, speed: 6.76 step/s
+global step 570, epoch: 1, batch: 570, loss: 0.35190, accu: 0.8260, precision: 0.8331, recall: 0.8387, f1: 0.8359, speed: 7.00 step/s
+global step 580, epoch: 1, batch: 580, loss: 0.37023, accu: 0.8267, precision: 0.8339, recall: 0.8390, f1: 0.8365, speed: 6.86 step/s
+global step 590, epoch: 1, batch: 590, loss: 0.37283, accu: 0.8267, precision: 0.8333, recall: 0.8394, f1: 0.8363, speed: 6.86 step/s
+global step 600, epoch: 1, batch: 600, loss: 0.37421, accu: 0.8271, precision: 0.8342, recall: 0.8385, f1: 0.8363, speed: 6.81 step/s
+eval loss: 0.32744, accu: 0.8528, precision: 0.8506, recall: 0.8810, f1: 0.8655
 
-[2023-03-02 23:00:35,368] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
-[2023-03-02 23:00:35,369] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
-global step 610, epoch: 1, batch: 610, loss: 0.54736, accu: 0.7719, precision: 0.7474, recall: 0.8503, f1: 0.7955, speed: 0.98 step/s
-global step 620, epoch: 1, batch: 620, loss: 0.37837, accu: 0.7547, precision: 0.7263, recall: 0.8389, f1: 0.7786, speed: 12.60 step/s
-global step 630, epoch: 1, batch: 630, loss: 0.58914, accu: 0.7552, precision: 0.7382, recall: 0.8033, f1: 0.7694, speed: 12.47 step/s
-global step 640, epoch: 1, batch: 640, loss: 0.41934, accu: 0.7641, precision: 0.7532, recall: 0.8058, f1: 0.7786, speed: 12.93 step/s
-global step 650, epoch: 1, batch: 650, loss: 0.63147, accu: 0.7731, precision: 0.7634, recall: 0.8107, f1: 0.7863, speed: 13.21 step/s
-global step 660, epoch: 1, batch: 660, loss: 0.51413, accu: 0.7724, precision: 0.7598, recall: 0.8116, f1: 0.7848, speed: 12.39 step/s
-global step 670, epoch: 1, batch: 670, loss: 0.71420, accu: 0.7710, precision: 0.7597, recall: 0.8142, f1: 0.7860, speed: 12.48 step/s
-global step 680, epoch: 1, batch: 680, loss: 0.47172, accu: 0.7723, precision: 0.7674, recall: 0.8093, f1: 0.7878, speed: 12.81 step/s
-global step 690, epoch: 1, batch: 690, loss: 0.39003, accu: 0.7712, precision: 0.7638, recall: 0.8035, f1: 0.7832, speed: 12.28 step/s
-global step 700, epoch: 1, batch: 700, loss: 0.45148, accu: 0.7722, precision: 0.7648, recall: 0.8052, f1: 0.7845, speed: 12.23 step/s
-global step 710, epoch: 1, batch: 710, loss: 0.42306, accu: 0.7739, precision: 0.7673, recall: 0.8069, f1: 0.7866, speed: 13.62 step/s
-global step 720, epoch: 1, batch: 720, loss: 0.21961, accu: 0.7766, precision: 0.7715, recall: 0.8058, f1: 0.7883, speed: 12.60 step/s
-global step 730, epoch: 1, batch: 730, loss: 0.25260, accu: 0.7774, precision: 0.7731, recall: 0.8069, f1: 0.7896, speed: 13.07 step/s
-global step 740, epoch: 1, batch: 740, loss: 0.47791, accu: 0.7799, precision: 0.7752, recall: 0.8137, f1: 0.7940, speed: 13.00 step/s
-global step 750, epoch: 1, batch: 750, loss: 0.46267, accu: 0.7812, precision: 0.7790, recall: 0.8119, f1: 0.7951, speed: 14.16 step/s
-global step 760, epoch: 1, batch: 760, loss: 0.29213, accu: 0.7807, precision: 0.7787, recall: 0.8115, f1: 0.7947, speed: 12.75 step/s
-global step 770, epoch: 1, batch: 770, loss: 0.41733, accu: 0.7781, precision: 0.7757, recall: 0.8108, f1: 0.7929, speed: 12.95 step/s
-global step 780, epoch: 1, batch: 780, loss: 0.43971, accu: 0.7802, precision: 0.7777, recall: 0.8108, f1: 0.7939, speed: 13.06 step/s
-global step 790, epoch: 1, batch: 790, loss: 0.52890, accu: 0.7811, precision: 0.7804, recall: 0.8124, f1: 0.7961, speed: 12.68 step/s
-global step 800, epoch: 1, batch: 800, loss: 0.45130, accu: 0.7827, precision: 0.7829, recall: 0.8133, f1: 0.7978, speed: 11.89 step/s
-eval loss: 0.44479, accu: 0.7900, precision: 0.7449, recall: 0.9267, f1: 0.8259
+[2023-03-03 01:55:13,831] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:55:13,832] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 610, epoch: 1, batch: 610, loss: 0.34278, accu: 0.8350, precision: 0.8415, recall: 0.8510, f1: 0.8462, speed: 1.84 step/s
+global step 620, epoch: 1, batch: 620, loss: 0.37195, accu: 0.8345, precision: 0.8335, recall: 0.8534, f1: 0.8434, speed: 6.80 step/s
+global step 630, epoch: 1, batch: 630, loss: 0.39316, accu: 0.8353, precision: 0.8342, recall: 0.8509, f1: 0.8425, speed: 6.95 step/s
+global step 640, epoch: 1, batch: 640, loss: 0.31847, accu: 0.8377, precision: 0.8402, recall: 0.8483, f1: 0.8443, speed: 6.73 step/s
+global step 650, epoch: 1, batch: 650, loss: 0.33652, accu: 0.8372, precision: 0.8401, recall: 0.8501, f1: 0.8451, speed: 6.91 step/s
+global step 660, epoch: 1, batch: 660, loss: 0.30440, accu: 0.8377, precision: 0.8432, recall: 0.8463, f1: 0.8447, speed: 6.81 step/s
+global step 670, epoch: 1, batch: 670, loss: 0.32003, accu: 0.8397, precision: 0.8446, recall: 0.8501, f1: 0.8473, speed: 6.93 step/s
+global step 680, epoch: 1, batch: 680, loss: 0.29815, accu: 0.8406, precision: 0.8465, recall: 0.8501, f1: 0.8483, speed: 6.69 step/s
+global step 690, epoch: 1, batch: 690, loss: 0.33315, accu: 0.8406, precision: 0.8461, recall: 0.8503, f1: 0.8482, speed: 6.76 step/s
+global step 700, epoch: 1, batch: 700, loss: 0.40141, accu: 0.8394, precision: 0.8447, recall: 0.8495, f1: 0.8471, speed: 5.98 step/s
+global step 710, epoch: 1, batch: 710, loss: 0.39233, accu: 0.8390, precision: 0.8444, recall: 0.8486, f1: 0.8465, speed: 6.81 step/s
+global step 720, epoch: 1, batch: 720, loss: 0.32055, accu: 0.8399, precision: 0.8447, recall: 0.8502, f1: 0.8474, speed: 6.73 step/s
+global step 730, epoch: 1, batch: 730, loss: 0.38841, accu: 0.8394, precision: 0.8443, recall: 0.8494, f1: 0.8469, speed: 6.72 step/s
+global step 740, epoch: 1, batch: 740, loss: 0.33091, accu: 0.8392, precision: 0.8451, recall: 0.8479, f1: 0.8465, speed: 6.85 step/s
+global step 750, epoch: 1, batch: 750, loss: 0.32358, accu: 0.8390, precision: 0.8445, recall: 0.8481, f1: 0.8463, speed: 6.66 step/s
+global step 760, epoch: 1, batch: 760, loss: 0.30547, accu: 0.8391, precision: 0.8450, recall: 0.8471, f1: 0.8461, speed: 6.82 step/s
+global step 770, epoch: 1, batch: 770, loss: 0.34727, accu: 0.8404, precision: 0.8463, recall: 0.8492, f1: 0.8477, speed: 6.72 step/s
+global step 780, epoch: 1, batch: 780, loss: 0.27034, accu: 0.8403, precision: 0.8463, recall: 0.8495, f1: 0.8479, speed: 6.58 step/s
+global step 790, epoch: 1, batch: 790, loss: 0.36979, accu: 0.8405, precision: 0.8460, recall: 0.8501, f1: 0.8481, speed: 6.74 step/s
+global step 800, epoch: 1, batch: 800, loss: 0.30081, accu: 0.8414, precision: 0.8470, recall: 0.8511, f1: 0.8490, speed: 6.90 step/s
+eval loss: 0.33811, accu: 0.8538, precision: 0.8302, recall: 0.9152, f1: 0.8706
 
-[2023-03-02 23:01:00,347] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
-[2023-03-02 23:01:00,347] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
-global step 810, epoch: 1, batch: 810, loss: 0.35574, accu: 0.8031, precision: 0.7633, recall: 0.8487, f1: 0.8037, speed: 0.98 step/s
-global step 820, epoch: 1, batch: 820, loss: 0.62702, accu: 0.7828, precision: 0.7642, recall: 0.8101, f1: 0.7865, speed: 11.99 step/s
-global step 830, epoch: 1, batch: 830, loss: 0.52862, accu: 0.7792, precision: 0.7674, recall: 0.8115, f1: 0.7888, speed: 13.28 step/s
-global step 840, epoch: 1, batch: 840, loss: 0.35536, accu: 0.7836, precision: 0.7744, recall: 0.8179, f1: 0.7956, speed: 12.39 step/s
-global step 850, epoch: 1, batch: 850, loss: 0.40456, accu: 0.7844, precision: 0.7795, recall: 0.8230, f1: 0.8007, speed: 12.37 step/s
-global step 860, epoch: 1, batch: 860, loss: 0.32242, accu: 0.7833, precision: 0.7775, recall: 0.8362, f1: 0.8058, speed: 13.03 step/s
-global step 870, epoch: 1, batch: 870, loss: 0.53926, accu: 0.7844, precision: 0.7811, recall: 0.8287, f1: 0.8042, speed: 12.79 step/s
-global step 880, epoch: 1, batch: 880, loss: 0.32587, accu: 0.7902, precision: 0.7884, recall: 0.8315, f1: 0.8094, speed: 12.10 step/s
-global step 890, epoch: 1, batch: 890, loss: 0.43990, accu: 0.7917, precision: 0.7923, recall: 0.8292, f1: 0.8104, speed: 12.30 step/s
-global step 900, epoch: 1, batch: 900, loss: 0.36914, accu: 0.7916, precision: 0.7921, recall: 0.8295, f1: 0.8103, speed: 12.73 step/s
-global step 910, epoch: 1, batch: 910, loss: 0.63730, accu: 0.7920, precision: 0.7920, recall: 0.8259, f1: 0.8086, speed: 12.07 step/s
-global step 920, epoch: 1, batch: 920, loss: 0.39959, accu: 0.7927, precision: 0.7929, recall: 0.8262, f1: 0.8092, speed: 13.28 step/s
-global step 930, epoch: 1, batch: 930, loss: 0.39513, accu: 0.7942, precision: 0.7956, recall: 0.8251, f1: 0.8101, speed: 12.81 step/s
-global step 940, epoch: 1, batch: 940, loss: 0.37845, accu: 0.7926, precision: 0.7941, recall: 0.8218, f1: 0.8077, speed: 12.75 step/s
-global step 950, epoch: 1, batch: 950, loss: 0.51027, accu: 0.7923, precision: 0.7920, recall: 0.8211, f1: 0.8063, speed: 13.64 step/s
-global step 960, epoch: 1, batch: 960, loss: 0.49941, accu: 0.7939, precision: 0.7949, recall: 0.8217, f1: 0.8081, speed: 12.78 step/s
-global step 970, epoch: 1, batch: 970, loss: 0.53067, accu: 0.7945, precision: 0.7970, recall: 0.8202, f1: 0.8084, speed: 12.77 step/s
-global step 980, epoch: 1, batch: 980, loss: 0.44644, accu: 0.7932, precision: 0.7954, recall: 0.8222, f1: 0.8086, speed: 12.77 step/s
-global step 990, epoch: 1, batch: 990, loss: 0.38097, accu: 0.7928, precision: 0.7953, recall: 0.8209, f1: 0.8079, speed: 13.62 step/s
-global step 1000, epoch: 1, batch: 1000, loss: 0.31924, accu: 0.7930, precision: 0.7946, recall: 0.8193, f1: 0.8068, speed: 13.10 step/s
-eval loss: 0.40430, accu: 0.8152, precision: 0.8056, recall: 0.8650, f1: 0.8342
+[2023-03-03 01:55:47,486] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:55:47,487] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 810, epoch: 1, batch: 810, loss: 0.37227, accu: 0.8630, precision: 0.8770, recall: 0.8672, f1: 0.8721, speed: 1.84 step/s
+global step 820, epoch: 1, batch: 820, loss: 0.35000, accu: 0.8568, precision: 0.8705, recall: 0.8586, f1: 0.8645, speed: 6.84 step/s
+global step 830, epoch: 1, batch: 830, loss: 0.38615, accu: 0.8578, precision: 0.8715, recall: 0.8569, f1: 0.8641, speed: 6.94 step/s
+global step 840, epoch: 1, batch: 840, loss: 0.31225, accu: 0.8569, precision: 0.8665, recall: 0.8614, f1: 0.8639, speed: 6.80 step/s
+global step 850, epoch: 1, batch: 850, loss: 0.42959, accu: 0.8533, precision: 0.8656, recall: 0.8547, f1: 0.8601, speed: 6.99 step/s
+global step 860, epoch: 1, batch: 860, loss: 0.35419, accu: 0.8542, precision: 0.8666, recall: 0.8543, f1: 0.8604, speed: 6.80 step/s
+global step 870, epoch: 1, batch: 870, loss: 0.43157, accu: 0.8526, precision: 0.8652, recall: 0.8534, f1: 0.8593, speed: 6.87 step/s
+global step 880, epoch: 1, batch: 880, loss: 0.30411, accu: 0.8538, precision: 0.8650, recall: 0.8572, f1: 0.8611, speed: 6.43 step/s
+global step 890, epoch: 1, batch: 890, loss: 0.32111, accu: 0.8521, precision: 0.8628, recall: 0.8565, f1: 0.8596, speed: 6.40 step/s
+global step 900, epoch: 1, batch: 900, loss: 0.30458, accu: 0.8510, precision: 0.8629, recall: 0.8541, f1: 0.8585, speed: 6.38 step/s
+global step 910, epoch: 1, batch: 910, loss: 0.39137, accu: 0.8503, precision: 0.8613, recall: 0.8548, f1: 0.8580, speed: 6.81 step/s
+global step 920, epoch: 1, batch: 920, loss: 0.30551, accu: 0.8502, precision: 0.8598, recall: 0.8556, f1: 0.8577, speed: 7.03 step/s
+global step 930, epoch: 1, batch: 930, loss: 0.33873, accu: 0.8502, precision: 0.8608, recall: 0.8546, f1: 0.8576, speed: 6.88 step/s
+global step 940, epoch: 1, batch: 940, loss: 0.33021, accu: 0.8509, precision: 0.8622, recall: 0.8544, f1: 0.8583, speed: 6.80 step/s
+global step 950, epoch: 1, batch: 950, loss: 0.36808, accu: 0.8507, precision: 0.8617, recall: 0.8543, f1: 0.8580, speed: 6.86 step/s
+global step 960, epoch: 1, batch: 960, loss: 0.30758, accu: 0.8504, precision: 0.8613, recall: 0.8548, f1: 0.8580, speed: 6.66 step/s
+global step 970, epoch: 1, batch: 970, loss: 0.37720, accu: 0.8496, precision: 0.8609, recall: 0.8535, f1: 0.8572, speed: 6.76 step/s
+global step 980, epoch: 1, batch: 980, loss: 0.35585, accu: 0.8496, precision: 0.8601, recall: 0.8546, f1: 0.8573, speed: 6.69 step/s
+global step 990, epoch: 1, batch: 990, loss: 0.42109, accu: 0.8491, precision: 0.8603, recall: 0.8536, f1: 0.8570, speed: 6.79 step/s
+global step 1000, epoch: 1, batch: 1000, loss: 0.34015, accu: 0.8496, precision: 0.8603, recall: 0.8545, f1: 0.8574, speed: 6.85 step/s
+eval loss: 0.31416, accu: 0.8564, precision: 0.8353, recall: 0.9129, f1: 0.8724
 
-[2023-03-02 23:01:25,774] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
-[2023-03-02 23:01:25,775] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
-global step 1010, epoch: 1, batch: 1010, loss: 0.46939, accu: 0.7969, precision: 0.8344, recall: 0.7706, f1: 0.8012, speed: 0.95 step/s
-global step 1020, epoch: 1, batch: 1020, loss: 0.48185, accu: 0.8031, precision: 0.8280, recall: 0.7831, f1: 0.8050, speed: 12.84 step/s
-global step 1030, epoch: 1, batch: 1030, loss: 0.51080, accu: 0.7906, precision: 0.8032, recall: 0.7984, f1: 0.8008, speed: 12.34 step/s
-global step 1040, epoch: 1, batch: 1040, loss: 0.44005, accu: 0.8008, precision: 0.8148, recall: 0.8039, f1: 0.8093, speed: 12.71 step/s
-global step 1050, epoch: 1, batch: 1050, loss: 0.34015, accu: 0.8075, precision: 0.8177, recall: 0.8138, f1: 0.8158, speed: 12.58 step/s
-global step 1060, epoch: 1, batch: 1060, loss: 0.40839, accu: 0.8057, precision: 0.8199, recall: 0.8026, f1: 0.8111, speed: 13.50 step/s
-global step 1070, epoch: 1, batch: 1070, loss: 0.45559, accu: 0.8027, precision: 0.8141, recall: 0.8113, f1: 0.8127, speed: 11.92 step/s
-global step 1080, epoch: 1, batch: 1080, loss: 0.47424, accu: 0.8059, precision: 0.8161, recall: 0.8167, f1: 0.8164, speed: 12.55 step/s
-global step 1090, epoch: 1, batch: 1090, loss: 0.29691, accu: 0.8059, precision: 0.8142, recall: 0.8158, f1: 0.8150, speed: 12.69 step/s
-global step 1100, epoch: 1, batch: 1100, loss: 0.50649, accu: 0.8037, precision: 0.8094, recall: 0.8181, f1: 0.8138, speed: 13.42 step/s
-global step 1110, epoch: 1, batch: 1110, loss: 0.46884, accu: 0.8023, precision: 0.8086, recall: 0.8156, f1: 0.8121, speed: 12.31 step/s
-global step 1120, epoch: 1, batch: 1120, loss: 0.42675, accu: 0.8026, precision: 0.8095, recall: 0.8159, f1: 0.8127, speed: 12.35 step/s
-global step 1130, epoch: 1, batch: 1130, loss: 0.40756, accu: 0.8010, precision: 0.8080, recall: 0.8176, f1: 0.8128, speed: 12.76 step/s
-global step 1140, epoch: 1, batch: 1140, loss: 0.45422, accu: 0.7998, precision: 0.8061, recall: 0.8213, f1: 0.8136, speed: 12.77 step/s
-global step 1150, epoch: 1, batch: 1150, loss: 0.59113, accu: 0.7985, precision: 0.8053, recall: 0.8195, f1: 0.8123, speed: 12.62 step/s
-global step 1160, epoch: 1, batch: 1160, loss: 0.31737, accu: 0.8004, precision: 0.8071, recall: 0.8219, f1: 0.8145, speed: 11.99 step/s
-global step 1170, epoch: 1, batch: 1170, loss: 0.67045, accu: 0.8007, precision: 0.8078, recall: 0.8201, f1: 0.8139, speed: 11.72 step/s
-global step 1180, epoch: 1, batch: 1180, loss: 0.41214, accu: 0.8026, precision: 0.8088, recall: 0.8218, f1: 0.8153, speed: 12.49 step/s
-global step 1190, epoch: 1, batch: 1190, loss: 0.55036, accu: 0.8035, precision: 0.8111, recall: 0.8218, f1: 0.8164, speed: 12.39 step/s
-global step 1200, epoch: 1, batch: 1200, loss: 0.50979, accu: 0.8028, precision: 0.8106, recall: 0.8202, f1: 0.8154, speed: 12.18 step/s
-eval loss: 0.38779, accu: 0.8194, precision: 0.8035, recall: 0.8791, f1: 0.8396
+[2023-03-03 01:56:21,033] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:56:21,033] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 1010, epoch: 1, batch: 1010, loss: 0.31341, accu: 0.8535, precision: 0.8544, recall: 0.8789, f1: 0.8665, speed: 1.82 step/s
+global step 1020, epoch: 1, batch: 1020, loss: 0.34008, accu: 0.8555, precision: 0.8654, recall: 0.8662, f1: 0.8658, speed: 6.64 step/s
+global step 1030, epoch: 1, batch: 1030, loss: 0.35650, accu: 0.8542, precision: 0.8638, recall: 0.8608, f1: 0.8623, speed: 6.66 step/s
+global step 1040, epoch: 1, batch: 1040, loss: 0.32356, accu: 0.8552, precision: 0.8649, recall: 0.8616, f1: 0.8632, speed: 6.85 step/s
+global step 1050, epoch: 1, batch: 1050, loss: 0.35153, accu: 0.8552, precision: 0.8663, recall: 0.8574, f1: 0.8618, speed: 6.66 step/s
+global step 1060, epoch: 1, batch: 1060, loss: 0.32389, accu: 0.8534, precision: 0.8639, recall: 0.8566, f1: 0.8603, speed: 6.70 step/s
+global step 1070, epoch: 1, batch: 1070, loss: 0.32238, accu: 0.8537, precision: 0.8633, recall: 0.8565, f1: 0.8599, speed: 6.84 step/s
+global step 1080, epoch: 1, batch: 1080, loss: 0.34048, accu: 0.8540, precision: 0.8628, recall: 0.8583, f1: 0.8605, speed: 6.90 step/s
+global step 1090, epoch: 1, batch: 1090, loss: 0.34327, accu: 0.8524, precision: 0.8608, recall: 0.8580, f1: 0.8594, speed: 6.80 step/s
+global step 1100, epoch: 1, batch: 1100, loss: 0.27511, accu: 0.8529, precision: 0.8602, recall: 0.8597, f1: 0.8600, speed: 6.09 step/s
+global step 1110, epoch: 1, batch: 1110, loss: 0.35795, accu: 0.8528, precision: 0.8613, recall: 0.8581, f1: 0.8597, speed: 6.68 step/s
+global step 1120, epoch: 1, batch: 1120, loss: 0.32476, accu: 0.8520, precision: 0.8596, recall: 0.8589, f1: 0.8592, speed: 6.71 step/s
+global step 1130, epoch: 1, batch: 1130, loss: 0.31742, accu: 0.8525, precision: 0.8597, recall: 0.8581, f1: 0.8589, speed: 6.67 step/s
+global step 1140, epoch: 1, batch: 1140, loss: 0.30599, accu: 0.8532, precision: 0.8613, recall: 0.8577, f1: 0.8595, speed: 6.97 step/s
+global step 1150, epoch: 1, batch: 1150, loss: 0.27348, accu: 0.8537, precision: 0.8620, recall: 0.8586, f1: 0.8603, speed: 6.72 step/s
+global step 1160, epoch: 1, batch: 1160, loss: 0.30249, accu: 0.8544, precision: 0.8629, recall: 0.8589, f1: 0.8609, speed: 6.99 step/s
+global step 1170, epoch: 1, batch: 1170, loss: 0.30196, accu: 0.8544, precision: 0.8632, recall: 0.8586, f1: 0.8609, speed: 6.88 step/s
+global step 1180, epoch: 1, batch: 1180, loss: 0.33736, accu: 0.8541, precision: 0.8634, recall: 0.8579, f1: 0.8606, speed: 6.60 step/s
+global step 1190, epoch: 1, batch: 1190, loss: 0.37249, accu: 0.8540, precision: 0.8631, recall: 0.8574, f1: 0.8602, speed: 6.85 step/s
+global step 1200, epoch: 1, batch: 1200, loss: 0.36950, accu: 0.8543, precision: 0.8625, recall: 0.8594, f1: 0.8610, speed: 6.81 step/s
+eval loss: 0.30424, accu: 0.8628, precision: 0.8407, recall: 0.9189, f1: 0.8781
 
+[2023-03-03 01:56:54,705] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:56:54,705] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 1210, epoch: 1, batch: 1210, loss: 0.34146, accu: 0.8660, precision: 0.8796, recall: 0.8629, f1: 0.8712, speed: 1.85 step/s
+global step 1220, epoch: 1, batch: 1220, loss: 0.30770, accu: 0.8630, precision: 0.8779, recall: 0.8639, f1: 0.8708, speed: 6.78 step/s
+global step 1230, epoch: 1, batch: 1230, loss: 0.33255, accu: 0.8658, precision: 0.8770, recall: 0.8707, f1: 0.8738, speed: 6.67 step/s
+global step 1240, epoch: 1, batch: 1240, loss: 0.25496, accu: 0.8625, precision: 0.8702, recall: 0.8718, f1: 0.8710, speed: 6.89 step/s
+global step 1250, epoch: 1, batch: 1250, loss: 0.31959, accu: 0.8614, precision: 0.8695, recall: 0.8718, f1: 0.8706, speed: 6.86 step/s
+global step 1260, epoch: 1, batch: 1260, loss: 0.29950, accu: 0.8627, precision: 0.8718, recall: 0.8712, f1: 0.8715, speed: 6.62 step/s
+global step 1270, epoch: 1, batch: 1270, loss: 0.37360, accu: 0.8616, precision: 0.8703, recall: 0.8715, f1: 0.8709, speed: 6.67 step/s
+global step 1280, epoch: 1, batch: 1280, loss: 0.25847, accu: 0.8618, precision: 0.8708, recall: 0.8709, f1: 0.8709, speed: 6.66 step/s
+global step 1290, epoch: 1, batch: 1290, loss: 0.33478, accu: 0.8618, precision: 0.8694, recall: 0.8726, f1: 0.8710, speed: 6.54 step/s
+global step 1300, epoch: 1, batch: 1300, loss: 0.29586, accu: 0.8607, precision: 0.8679, recall: 0.8712, f1: 0.8695, speed: 6.77 step/s
+global step 1310, epoch: 1, batch: 1310, loss: 0.28460, accu: 0.8604, precision: 0.8684, recall: 0.8691, f1: 0.8687, speed: 6.24 step/s
+global step 1320, epoch: 1, batch: 1320, loss: 0.25738, accu: 0.8609, precision: 0.8684, recall: 0.8699, f1: 0.8692, speed: 6.73 step/s
+global step 1330, epoch: 1, batch: 1330, loss: 0.25440, accu: 0.8608, precision: 0.8687, recall: 0.8687, f1: 0.8687, speed: 6.71 step/s
+global step 1340, epoch: 1, batch: 1340, loss: 0.30984, accu: 0.8614, precision: 0.8692, recall: 0.8683, f1: 0.8687, speed: 6.69 step/s
+global step 1350, epoch: 1, batch: 1350, loss: 0.22995, accu: 0.8617, precision: 0.8696, recall: 0.8687, f1: 0.8691, speed: 6.84 step/s
+global step 1360, epoch: 1, batch: 1360, loss: 0.39193, accu: 0.8609, precision: 0.8693, recall: 0.8673, f1: 0.8683, speed: 6.67 step/s
+global step 1370, epoch: 1, batch: 1370, loss: 0.31991, accu: 0.8610, precision: 0.8690, recall: 0.8677, f1: 0.8683, speed: 6.89 step/s
+global step 1380, epoch: 1, batch: 1380, loss: 0.35189, accu: 0.8611, precision: 0.8691, recall: 0.8679, f1: 0.8685, speed: 6.89 step/s
+global step 1390, epoch: 1, batch: 1390, loss: 0.31618, accu: 0.8612, precision: 0.8687, recall: 0.8683, f1: 0.8685, speed: 6.81 step/s
+global step 1400, epoch: 1, batch: 1400, loss: 0.39657, accu: 0.8613, precision: 0.8687, recall: 0.8690, f1: 0.8688, speed: 6.84 step/s
+eval loss: 0.29449, accu: 0.8678, precision: 0.8421, recall: 0.9282, f1: 0.8830
+
+[2023-03-03 01:57:28,416] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:57:28,417] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 1410, epoch: 1, batch: 1410, loss: 0.32137, accu: 0.8750, precision: 0.8779, recall: 0.8863, f1: 0.8821, speed: 1.81 step/s
+global step 1420, epoch: 1, batch: 1420, loss: 0.30899, accu: 0.8750, precision: 0.8774, recall: 0.8833, f1: 0.8804, speed: 6.70 step/s
+global step 1430, epoch: 1, batch: 1430, loss: 0.40101, accu: 0.8682, precision: 0.8696, recall: 0.8809, f1: 0.8752, speed: 6.88 step/s
+global step 1440, epoch: 1, batch: 1440, loss: 0.29547, accu: 0.8675, precision: 0.8704, recall: 0.8819, f1: 0.8761, speed: 6.72 step/s
+global step 1450, epoch: 1, batch: 1450, loss: 0.28530, accu: 0.8658, precision: 0.8692, recall: 0.8791, f1: 0.8741, speed: 6.70 step/s
+global step 1460, epoch: 1, batch: 1460, loss: 0.25713, accu: 0.8683, precision: 0.8721, recall: 0.8798, f1: 0.8759, speed: 7.01 step/s
+global step 1470, epoch: 1, batch: 1470, loss: 0.33072, accu: 0.8684, precision: 0.8722, recall: 0.8800, f1: 0.8761, speed: 6.97 step/s
+global step 1480, epoch: 1, batch: 1480, loss: 0.32553, accu: 0.8677, precision: 0.8704, recall: 0.8812, f1: 0.8758, speed: 6.77 step/s
+global step 1490, epoch: 1, batch: 1490, loss: 0.36701, accu: 0.8671, precision: 0.8706, recall: 0.8794, f1: 0.8749, speed: 6.78 step/s
+global step 1500, epoch: 1, batch: 1500, loss: 0.37608, accu: 0.8658, precision: 0.8692, recall: 0.8777, f1: 0.8734, speed: 6.68 step/s
+global step 1510, epoch: 1, batch: 1510, loss: 0.30262, accu: 0.8668, precision: 0.8693, recall: 0.8798, f1: 0.8745, speed: 6.73 step/s
+global step 1520, epoch: 1, batch: 1520, loss: 0.40959, accu: 0.8662, precision: 0.8696, recall: 0.8778, f1: 0.8737, speed: 6.74 step/s
+global step 1530, epoch: 1, batch: 1530, loss: 0.25425, accu: 0.8665, precision: 0.8698, recall: 0.8783, f1: 0.8740, speed: 6.70 step/s
+global step 1540, epoch: 1, batch: 1540, loss: 0.22391, accu: 0.8655, precision: 0.8691, recall: 0.8775, f1: 0.8732, speed: 6.65 step/s
+global step 1550, epoch: 1, batch: 1550, loss: 0.30438, accu: 0.8663, precision: 0.8697, recall: 0.8778, f1: 0.8737, speed: 6.74 step/s
+global step 1560, epoch: 1, batch: 1560, loss: 0.26574, accu: 0.8666, precision: 0.8707, recall: 0.8772, f1: 0.8740, speed: 6.92 step/s
+global step 1570, epoch: 1, batch: 1570, loss: 0.30698, accu: 0.8665, precision: 0.8702, recall: 0.8777, f1: 0.8739, speed: 6.86 step/s
+global step 1580, epoch: 1, batch: 1580, loss: 0.27696, accu: 0.8659, precision: 0.8695, recall: 0.8776, f1: 0.8735, speed: 6.89 step/s
+global step 1590, epoch: 1, batch: 1590, loss: 0.30596, accu: 0.8661, precision: 0.8694, recall: 0.8775, f1: 0.8735, speed: 6.85 step/s
+global step 1600, epoch: 1, batch: 1600, loss: 0.27942, accu: 0.8662, precision: 0.8700, recall: 0.8773, f1: 0.8736, speed: 6.94 step/s
+eval loss: 0.29127, accu: 0.8730, precision: 0.8509, recall: 0.9260, f1: 0.8869
+
+[2023-03-03 01:58:01,885] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:58:01,885] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 1610, epoch: 1, batch: 1610, loss: 0.31647, accu: 0.8800, precision: 0.8806, recall: 0.8939, f1: 0.8872, speed: 1.85 step/s
+global step 1620, epoch: 1, batch: 1620, loss: 0.32689, accu: 0.8780, precision: 0.8830, recall: 0.8879, f1: 0.8854, speed: 6.97 step/s
+global step 1630, epoch: 1, batch: 1630, loss: 0.28779, accu: 0.8745, precision: 0.8766, recall: 0.8884, f1: 0.8825, speed: 6.53 step/s
+global step 1640, epoch: 1, batch: 1640, loss: 0.38371, accu: 0.8734, precision: 0.8756, recall: 0.8870, f1: 0.8813, speed: 6.78 step/s
+global step 1650, epoch: 1, batch: 1650, loss: 0.25805, accu: 0.8708, precision: 0.8736, recall: 0.8832, f1: 0.8784, speed: 6.66 step/s
+global step 1660, epoch: 1, batch: 1660, loss: 0.26210, accu: 0.8701, precision: 0.8723, recall: 0.8818, f1: 0.8770, speed: 6.76 step/s
+global step 1670, epoch: 1, batch: 1670, loss: 0.27955, accu: 0.8704, precision: 0.8721, recall: 0.8833, f1: 0.8777, speed: 6.81 step/s
+global step 1680, epoch: 1, batch: 1680, loss: 0.25079, accu: 0.8704, precision: 0.8730, recall: 0.8830, f1: 0.8780, speed: 6.90 step/s
+global step 1690, epoch: 1, batch: 1690, loss: 0.31405, accu: 0.8699, precision: 0.8725, recall: 0.8807, f1: 0.8766, speed: 6.68 step/s
+global step 1700, epoch: 1, batch: 1700, loss: 0.27287, accu: 0.8700, precision: 0.8718, recall: 0.8821, f1: 0.8769, speed: 6.77 step/s
+global step 1710, epoch: 1, batch: 1710, loss: 0.27386, accu: 0.8701, precision: 0.8729, recall: 0.8804, f1: 0.8766, speed: 6.90 step/s
+global step 1720, epoch: 1, batch: 1720, loss: 0.27583, accu: 0.8715, precision: 0.8746, recall: 0.8813, f1: 0.8779, speed: 6.75 step/s
+global step 1730, epoch: 1, batch: 1730, loss: 0.33847, accu: 0.8714, precision: 0.8747, recall: 0.8813, f1: 0.8780, speed: 6.87 step/s
+global step 1740, epoch: 1, batch: 1740, loss: 0.29562, accu: 0.8718, precision: 0.8753, recall: 0.8814, f1: 0.8783, speed: 6.64 step/s
+global step 1750, epoch: 1, batch: 1750, loss: 0.28025, accu: 0.8723, precision: 0.8763, recall: 0.8818, f1: 0.8790, speed: 6.83 step/s
+global step 1760, epoch: 1, batch: 1760, loss: 0.26845, accu: 0.8721, precision: 0.8762, recall: 0.8813, f1: 0.8788, speed: 6.76 step/s
+global step 1770, epoch: 1, batch: 1770, loss: 0.32720, accu: 0.8719, precision: 0.8757, recall: 0.8820, f1: 0.8788, speed: 6.95 step/s
+global step 1780, epoch: 1, batch: 1780, loss: 0.31226, accu: 0.8716, precision: 0.8744, recall: 0.8825, f1: 0.8784, speed: 6.71 step/s
+global step 1790, epoch: 1, batch: 1790, loss: 0.29356, accu: 0.8723, precision: 0.8752, recall: 0.8829, f1: 0.8791, speed: 6.82 step/s
+global step 1800, epoch: 1, batch: 1800, loss: 0.29883, accu: 0.8717, precision: 0.8744, recall: 0.8828, f1: 0.8786, speed: 6.80 step/s
+eval loss: 0.27109, accu: 0.8774, precision: 0.8675, recall: 0.9111, f1: 0.8888
+
+[2023-03-03 01:58:35,570] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:58:35,571] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 1810, epoch: 1, batch: 1810, loss: 0.24317, accu: 0.8875, precision: 0.8843, recall: 0.9052, f1: 0.8946, speed: 1.76 step/s
+global step 1820, epoch: 1, batch: 1820, loss: 0.26564, accu: 0.8790, precision: 0.8781, recall: 0.8923, f1: 0.8851, speed: 6.89 step/s
+global step 1830, epoch: 1, batch: 1830, loss: 0.24568, accu: 0.8825, precision: 0.8849, recall: 0.8952, f1: 0.8900, speed: 6.90 step/s
+global step 1840, epoch: 1, batch: 1840, loss: 0.31547, accu: 0.8798, precision: 0.8828, recall: 0.8947, f1: 0.8887, speed: 6.87 step/s
+global step 1850, epoch: 1, batch: 1850, loss: 0.23450, accu: 0.8787, precision: 0.8824, recall: 0.8909, f1: 0.8866, speed: 6.85 step/s
+global step 1860, epoch: 1, batch: 1860, loss: 0.28670, accu: 0.8776, precision: 0.8808, recall: 0.8906, f1: 0.8857, speed: 6.87 step/s
+global step 1870, epoch: 1, batch: 1870, loss: 0.29843, accu: 0.8762, precision: 0.8804, recall: 0.8876, f1: 0.8840, speed: 6.86 step/s
+global step 1880, epoch: 1, batch: 1880, loss: 0.25440, accu: 0.8767, precision: 0.8811, recall: 0.8878, f1: 0.8845, speed: 6.94 step/s
+global step 1890, epoch: 1, batch: 1890, loss: 0.31171, accu: 0.8776, precision: 0.8820, recall: 0.8893, f1: 0.8856, speed: 6.97 step/s
+global step 1900, epoch: 1, batch: 1900, loss: 0.25292, accu: 0.8781, precision: 0.8829, recall: 0.8896, f1: 0.8862, speed: 6.96 step/s
+global step 1910, epoch: 1, batch: 1910, loss: 0.30051, accu: 0.8783, precision: 0.8822, recall: 0.8904, f1: 0.8862, speed: 6.88 step/s
+global step 1920, epoch: 1, batch: 1920, loss: 0.25608, accu: 0.8778, precision: 0.8815, recall: 0.8897, f1: 0.8856, speed: 5.95 step/s
+global step 1930, epoch: 1, batch: 1930, loss: 0.25683, accu: 0.8780, precision: 0.8823, recall: 0.8892, f1: 0.8858, speed: 6.73 step/s
+global step 1940, epoch: 1, batch: 1940, loss: 0.33879, accu: 0.8781, precision: 0.8820, recall: 0.8897, f1: 0.8858, speed: 6.74 step/s
+global step 1950, epoch: 1, batch: 1950, loss: 0.40222, accu: 0.8773, precision: 0.8811, recall: 0.8894, f1: 0.8852, speed: 6.79 step/s
+global step 1960, epoch: 1, batch: 1960, loss: 0.28647, accu: 0.8764, precision: 0.8799, recall: 0.8887, f1: 0.8843, speed: 6.74 step/s
+global step 1970, epoch: 1, batch: 1970, loss: 0.21760, accu: 0.8773, precision: 0.8806, recall: 0.8894, f1: 0.8850, speed: 6.54 step/s
+global step 1980, epoch: 1, batch: 1980, loss: 0.26877, accu: 0.8771, precision: 0.8803, recall: 0.8891, f1: 0.8846, speed: 6.92 step/s
+global step 1990, epoch: 1, batch: 1990, loss: 0.24001, accu: 0.8774, precision: 0.8802, recall: 0.8903, f1: 0.8852, speed: 6.73 step/s
+global step 2000, epoch: 1, batch: 2000, loss: 0.29402, accu: 0.8767, precision: 0.8797, recall: 0.8897, f1: 0.8847, speed: 6.70 step/s
+eval loss: 0.29284, accu: 0.8736, precision: 0.8438, recall: 0.9386, f1: 0.8887
+
+[2023-03-03 01:59:09,084] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:59:09,085] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 2010, epoch: 1, batch: 2010, loss: 0.19887, accu: 0.8810, precision: 0.8829, recall: 0.8913, f1: 0.8871, speed: 1.84 step/s
+global step 2020, epoch: 1, batch: 2020, loss: 0.26312, accu: 0.8755, precision: 0.8782, recall: 0.8857, f1: 0.8819, speed: 6.79 step/s
+global step 2030, epoch: 1, batch: 2030, loss: 0.22093, accu: 0.8750, precision: 0.8806, recall: 0.8829, f1: 0.8817, speed: 6.81 step/s
+global step 2040, epoch: 1, batch: 2040, loss: 0.31824, accu: 0.8751, precision: 0.8782, recall: 0.8855, f1: 0.8819, speed: 6.75 step/s
+global step 2050, epoch: 1, batch: 2050, loss: 0.28684, accu: 0.8758, precision: 0.8818, recall: 0.8828, f1: 0.8823, speed: 6.89 step/s
+global step 2060, epoch: 1, batch: 2060, loss: 0.31882, accu: 0.8757, precision: 0.8798, recall: 0.8848, f1: 0.8823, speed: 6.83 step/s
+global step 2070, epoch: 1, batch: 2070, loss: 0.31114, accu: 0.8743, precision: 0.8781, recall: 0.8840, f1: 0.8810, speed: 6.65 step/s
+global step 2080, epoch: 1, batch: 2080, loss: 0.24665, accu: 0.8754, precision: 0.8796, recall: 0.8849, f1: 0.8823, speed: 6.75 step/s
+global step 2090, epoch: 1, batch: 2090, loss: 0.26901, accu: 0.8755, precision: 0.8794, recall: 0.8840, f1: 0.8817, speed: 6.86 step/s
+global step 2100, epoch: 1, batch: 2100, loss: 0.28270, accu: 0.8748, precision: 0.8780, recall: 0.8842, f1: 0.8811, speed: 6.72 step/s
+global step 2110, epoch: 1, batch: 2110, loss: 0.26555, accu: 0.8746, precision: 0.8795, recall: 0.8825, f1: 0.8810, speed: 6.81 step/s
+global step 2120, epoch: 1, batch: 2120, loss: 0.31694, accu: 0.8749, precision: 0.8789, recall: 0.8837, f1: 0.8813, speed: 6.79 step/s
+global step 2130, epoch: 1, batch: 2130, loss: 0.27486, accu: 0.8754, precision: 0.8797, recall: 0.8838, f1: 0.8817, speed: 6.86 step/s
+global step 2140, epoch: 1, batch: 2140, loss: 0.22124, accu: 0.8764, precision: 0.8800, recall: 0.8855, f1: 0.8827, speed: 6.78 step/s
+global step 2150, epoch: 1, batch: 2150, loss: 0.24166, accu: 0.8776, precision: 0.8812, recall: 0.8854, f1: 0.8833, speed: 6.97 step/s
+global step 2160, epoch: 1, batch: 2160, loss: 0.30938, accu: 0.8768, precision: 0.8808, recall: 0.8844, f1: 0.8826, speed: 6.81 step/s
+global step 2170, epoch: 1, batch: 2170, loss: 0.28188, accu: 0.8771, precision: 0.8806, recall: 0.8858, f1: 0.8832, speed: 6.73 step/s
+global step 2180, epoch: 1, batch: 2180, loss: 0.29628, accu: 0.8775, precision: 0.8803, recall: 0.8867, f1: 0.8835, speed: 6.90 step/s
+global step 2190, epoch: 1, batch: 2190, loss: 0.32073, accu: 0.8777, precision: 0.8809, recall: 0.8863, f1: 0.8836, speed: 6.02 step/s
+global step 2200, epoch: 1, batch: 2200, loss: 0.30714, accu: 0.8777, precision: 0.8810, recall: 0.8861, f1: 0.8836, speed: 6.82 step/s
+eval loss: 0.27064, accu: 0.8818, precision: 0.8622, recall: 0.9286, f1: 0.8941
+
+[2023-03-03 01:59:42,833] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 01:59:42,834] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 2210, epoch: 1, batch: 2210, loss: 0.24924, accu: 0.8815, precision: 0.8742, recall: 0.9004, f1: 0.8871, speed: 1.76 step/s
+global step 2220, epoch: 1, batch: 2220, loss: 0.26252, accu: 0.8768, precision: 0.8765, recall: 0.8871, f1: 0.8817, speed: 6.93 step/s
+global step 2230, epoch: 1, batch: 2230, loss: 0.18899, accu: 0.8805, precision: 0.8815, recall: 0.8886, f1: 0.8851, speed: 6.85 step/s
+global step 2240, epoch: 1, batch: 2240, loss: 0.30586, accu: 0.8806, precision: 0.8826, recall: 0.8871, f1: 0.8848, speed: 6.79 step/s
+global step 2250, epoch: 1, batch: 2250, loss: 0.22675, accu: 0.8819, precision: 0.8837, recall: 0.8903, f1: 0.8870, speed: 7.04 step/s
+global step 2260, epoch: 1, batch: 2260, loss: 0.24356, accu: 0.8833, precision: 0.8848, recall: 0.8924, f1: 0.8886, speed: 6.70 step/s
+global step 2270, epoch: 1, batch: 2270, loss: 0.28410, accu: 0.8829, precision: 0.8850, recall: 0.8914, f1: 0.8882, speed: 6.78 step/s
+global step 2280, epoch: 1, batch: 2280, loss: 0.33042, accu: 0.8813, precision: 0.8840, recall: 0.8910, f1: 0.8875, speed: 7.04 step/s
+global step 2290, epoch: 1, batch: 2290, loss: 0.26169, accu: 0.8815, precision: 0.8827, recall: 0.8931, f1: 0.8879, speed: 6.84 step/s
+global step 2300, epoch: 1, batch: 2300, loss: 0.34687, accu: 0.8809, precision: 0.8833, recall: 0.8903, f1: 0.8868, speed: 6.70 step/s
+global step 2310, epoch: 1, batch: 2310, loss: 0.23897, accu: 0.8816, precision: 0.8839, recall: 0.8920, f1: 0.8879, speed: 6.82 step/s
+global step 2320, epoch: 1, batch: 2320, loss: 0.25435, accu: 0.8819, precision: 0.8832, recall: 0.8940, f1: 0.8886, speed: 6.68 step/s
+global step 2330, epoch: 1, batch: 2330, loss: 0.27259, accu: 0.8833, precision: 0.8847, recall: 0.8947, f1: 0.8897, speed: 6.88 step/s
+global step 2340, epoch: 1, batch: 2340, loss: 0.28194, accu: 0.8837, precision: 0.8856, recall: 0.8946, f1: 0.8901, speed: 6.77 step/s
+global step 2350, epoch: 1, batch: 2350, loss: 0.24916, accu: 0.8838, precision: 0.8853, recall: 0.8948, f1: 0.8901, speed: 6.89 step/s
+global step 2360, epoch: 1, batch: 2360, loss: 0.30821, accu: 0.8843, precision: 0.8856, recall: 0.8957, f1: 0.8906, speed: 6.81 step/s
+global step 2370, epoch: 1, batch: 2370, loss: 0.34589, accu: 0.8838, precision: 0.8851, recall: 0.8952, f1: 0.8901, speed: 6.63 step/s
+global step 2380, epoch: 1, batch: 2380, loss: 0.26534, accu: 0.8831, precision: 0.8851, recall: 0.8941, f1: 0.8896, speed: 6.72 step/s
+global step 2390, epoch: 1, batch: 2390, loss: 0.30290, accu: 0.8832, precision: 0.8851, recall: 0.8950, f1: 0.8900, speed: 6.77 step/s
+global step 2400, epoch: 1, batch: 2400, loss: 0.25897, accu: 0.8840, precision: 0.8861, recall: 0.8951, f1: 0.8906, speed: 6.87 step/s
+eval loss: 0.25523, accu: 0.8864, precision: 0.8699, recall: 0.9275, f1: 0.8977
+
+[2023-03-03 02:00:16,162] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:00:16,162] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 2410, epoch: 1, batch: 2410, loss: 0.23564, accu: 0.8890, precision: 0.8939, recall: 0.9069, f1: 0.9004, speed: 1.84 step/s
+global step 2420, epoch: 1, batch: 2420, loss: 0.22037, accu: 0.8828, precision: 0.8871, recall: 0.8997, f1: 0.8933, speed: 6.51 step/s
+global step 2430, epoch: 1, batch: 2430, loss: 0.25973, accu: 0.8827, precision: 0.8860, recall: 0.8980, f1: 0.8920, speed: 6.70 step/s
+global step 2440, epoch: 1, batch: 2440, loss: 0.33082, accu: 0.8824, precision: 0.8870, recall: 0.8962, f1: 0.8916, speed: 6.57 step/s
+global step 2450, epoch: 1, batch: 2450, loss: 0.36015, accu: 0.8849, precision: 0.8880, recall: 0.8985, f1: 0.8932, speed: 6.51 step/s
+global step 2460, epoch: 1, batch: 2460, loss: 0.27961, accu: 0.8836, precision: 0.8864, recall: 0.8981, f1: 0.8922, speed: 6.43 step/s
+global step 2470, epoch: 1, batch: 2470, loss: 0.25702, accu: 0.8841, precision: 0.8866, recall: 0.8989, f1: 0.8927, speed: 5.77 step/s
+global step 2480, epoch: 1, batch: 2480, loss: 0.23478, accu: 0.8836, precision: 0.8857, recall: 0.8988, f1: 0.8922, speed: 6.52 step/s
+global step 2490, epoch: 1, batch: 2490, loss: 0.25155, accu: 0.8836, precision: 0.8865, recall: 0.8978, f1: 0.8921, speed: 6.73 step/s
+global step 2500, epoch: 1, batch: 2500, loss: 0.30921, accu: 0.8831, precision: 0.8855, recall: 0.8986, f1: 0.8920, speed: 6.82 step/s
+global step 2510, epoch: 1, batch: 2510, loss: 0.26063, accu: 0.8845, precision: 0.8872, recall: 0.8993, f1: 0.8932, speed: 6.91 step/s
+global step 2520, epoch: 1, batch: 2520, loss: 0.32280, accu: 0.8838, precision: 0.8867, recall: 0.8976, f1: 0.8921, speed: 6.87 step/s
+global step 2530, epoch: 1, batch: 2530, loss: 0.24274, accu: 0.8840, precision: 0.8883, recall: 0.8964, f1: 0.8923, speed: 5.92 step/s
+global step 2540, epoch: 1, batch: 2540, loss: 0.29978, accu: 0.8827, precision: 0.8860, recall: 0.8964, f1: 0.8912, speed: 6.68 step/s
+global step 2550, epoch: 1, batch: 2550, loss: 0.30943, accu: 0.8822, precision: 0.8853, recall: 0.8960, f1: 0.8906, speed: 6.85 step/s
+global step 2560, epoch: 1, batch: 2560, loss: 0.24201, accu: 0.8829, precision: 0.8854, recall: 0.8973, f1: 0.8913, speed: 6.81 step/s
+global step 2570, epoch: 1, batch: 2570, loss: 0.26730, accu: 0.8833, precision: 0.8861, recall: 0.8970, f1: 0.8915, speed: 6.67 step/s
+global step 2580, epoch: 1, batch: 2580, loss: 0.30025, accu: 0.8827, precision: 0.8855, recall: 0.8960, f1: 0.8907, speed: 6.71 step/s
+global step 2590, epoch: 1, batch: 2590, loss: 0.23882, accu: 0.8833, precision: 0.8862, recall: 0.8966, f1: 0.8914, speed: 6.78 step/s
+global step 2600, epoch: 1, batch: 2600, loss: 0.27433, accu: 0.8832, precision: 0.8862, recall: 0.8962, f1: 0.8912, speed: 6.74 step/s
+eval loss: 0.24668, accu: 0.8940, precision: 0.8786, recall: 0.9315, f1: 0.9043
+
+[2023-03-03 02:00:50,443] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:00:50,444] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 2610, epoch: 1, batch: 2610, loss: 0.20632, accu: 0.8900, precision: 0.8913, recall: 0.8947, f1: 0.8930, speed: 1.83 step/s
+global step 2620, epoch: 1, batch: 2620, loss: 0.26042, accu: 0.8880, precision: 0.8848, recall: 0.8986, f1: 0.8917, speed: 6.81 step/s
+global step 2630, epoch: 1, batch: 2630, loss: 0.22755, accu: 0.8877, precision: 0.8869, recall: 0.8983, f1: 0.8925, speed: 6.94 step/s
+global step 2640, epoch: 1, batch: 2640, loss: 0.26785, accu: 0.8868, precision: 0.8872, recall: 0.8958, f1: 0.8915, speed: 6.74 step/s
+global step 2650, epoch: 1, batch: 2650, loss: 0.26113, accu: 0.8863, precision: 0.8837, recall: 0.8992, f1: 0.8914, speed: 6.75 step/s
+global step 2660, epoch: 1, batch: 2660, loss: 0.33595, accu: 0.8858, precision: 0.8850, recall: 0.8965, f1: 0.8907, speed: 6.74 step/s
+global step 2670, epoch: 1, batch: 2670, loss: 0.21938, accu: 0.8864, precision: 0.8859, recall: 0.8973, f1: 0.8916, speed: 6.86 step/s
+global step 2680, epoch: 1, batch: 2680, loss: 0.25393, accu: 0.8867, precision: 0.8869, recall: 0.8974, f1: 0.8921, speed: 6.57 step/s
+global step 2690, epoch: 1, batch: 2690, loss: 0.25234, accu: 0.8859, precision: 0.8860, recall: 0.8966, f1: 0.8913, speed: 6.70 step/s
+global step 2700, epoch: 1, batch: 2700, loss: 0.25718, accu: 0.8853, precision: 0.8860, recall: 0.8961, f1: 0.8910, speed: 6.65 step/s
+global step 2710, epoch: 1, batch: 2710, loss: 0.23899, accu: 0.8852, precision: 0.8865, recall: 0.8959, f1: 0.8912, speed: 6.72 step/s
+global step 2720, epoch: 1, batch: 2720, loss: 0.28220, accu: 0.8848, precision: 0.8861, recall: 0.8950, f1: 0.8905, speed: 6.76 step/s
+global step 2730, epoch: 1, batch: 2730, loss: 0.26735, accu: 0.8845, precision: 0.8861, recall: 0.8951, f1: 0.8906, speed: 6.77 step/s
+global step 2740, epoch: 1, batch: 2740, loss: 0.27947, accu: 0.8849, precision: 0.8863, recall: 0.8956, f1: 0.8909, speed: 6.83 step/s
+global step 2750, epoch: 1, batch: 2750, loss: 0.25892, accu: 0.8850, precision: 0.8865, recall: 0.8955, f1: 0.8910, speed: 6.88 step/s
+global step 2760, epoch: 1, batch: 2760, loss: 0.26148, accu: 0.8845, precision: 0.8861, recall: 0.8950, f1: 0.8906, speed: 6.80 step/s
+global step 2770, epoch: 1, batch: 2770, loss: 0.23932, accu: 0.8853, precision: 0.8869, recall: 0.8957, f1: 0.8912, speed: 6.65 step/s
+global step 2780, epoch: 1, batch: 2780, loss: 0.34507, accu: 0.8857, precision: 0.8880, recall: 0.8948, f1: 0.8914, speed: 6.80 step/s
+global step 2790, epoch: 1, batch: 2790, loss: 0.22670, accu: 0.8855, precision: 0.8872, recall: 0.8950, f1: 0.8910, speed: 6.93 step/s
+global step 2800, epoch: 1, batch: 2800, loss: 0.27785, accu: 0.8849, precision: 0.8874, recall: 0.8933, f1: 0.8903, speed: 6.79 step/s
+eval loss: 0.24782, accu: 0.8930, precision: 0.8779, recall: 0.9304, f1: 0.9034
+
+[2023-03-03 02:01:24,019] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:01:24,019] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 2810, epoch: 1, batch: 2810, loss: 0.24975, accu: 0.8845, precision: 0.8756, recall: 0.9112, f1: 0.8930, speed: 1.81 step/s
+global step 2820, epoch: 1, batch: 2820, loss: 0.21848, accu: 0.8898, precision: 0.8868, recall: 0.9096, f1: 0.8980, speed: 6.78 step/s
+global step 2830, epoch: 1, batch: 2830, loss: 0.28165, accu: 0.8895, precision: 0.8882, recall: 0.9063, f1: 0.8972, speed: 6.62 step/s
+global step 2840, epoch: 1, batch: 2840, loss: 0.28696, accu: 0.8861, precision: 0.8854, recall: 0.9023, f1: 0.8937, speed: 6.79 step/s
+global step 2850, epoch: 1, batch: 2850, loss: 0.34227, accu: 0.8856, precision: 0.8863, recall: 0.8984, f1: 0.8923, speed: 6.84 step/s
+global step 2860, epoch: 1, batch: 2860, loss: 0.20913, accu: 0.8859, precision: 0.8873, recall: 0.8989, f1: 0.8931, speed: 7.09 step/s
+global step 2870, epoch: 1, batch: 2870, loss: 0.27550, accu: 0.8874, precision: 0.8880, recall: 0.9000, f1: 0.8940, speed: 6.72 step/s
+global step 2880, epoch: 1, batch: 2880, loss: 0.28885, accu: 0.8878, precision: 0.8914, recall: 0.8972, f1: 0.8943, speed: 6.76 step/s
+global step 2890, epoch: 1, batch: 2890, loss: 0.27301, accu: 0.8882, precision: 0.8905, recall: 0.9000, f1: 0.8952, speed: 6.58 step/s
+global step 2900, epoch: 1, batch: 2900, loss: 0.24306, accu: 0.8894, precision: 0.8921, recall: 0.9004, f1: 0.8962, speed: 6.81 step/s
+global step 2910, epoch: 1, batch: 2910, loss: 0.22566, accu: 0.8895, precision: 0.8919, recall: 0.9004, f1: 0.8962, speed: 6.83 step/s
+global step 2920, epoch: 1, batch: 2920, loss: 0.23553, accu: 0.8900, precision: 0.8926, recall: 0.9009, f1: 0.8967, speed: 6.73 step/s
+global step 2930, epoch: 1, batch: 2930, loss: 0.22314, accu: 0.8891, precision: 0.8918, recall: 0.9003, f1: 0.8960, speed: 6.93 step/s
+global step 2940, epoch: 1, batch: 2940, loss: 0.22848, accu: 0.8891, precision: 0.8920, recall: 0.9001, f1: 0.8960, speed: 6.78 step/s
+global step 2950, epoch: 1, batch: 2950, loss: 0.25611, accu: 0.8893, precision: 0.8918, recall: 0.9011, f1: 0.8964, speed: 6.85 step/s
+global step 2960, epoch: 1, batch: 2960, loss: 0.31242, accu: 0.8893, precision: 0.8916, recall: 0.9013, f1: 0.8964, speed: 6.85 step/s
+global step 2970, epoch: 1, batch: 2970, loss: 0.37551, accu: 0.8889, precision: 0.8912, recall: 0.9005, f1: 0.8958, speed: 6.81 step/s
+global step 2980, epoch: 1, batch: 2980, loss: 0.32467, accu: 0.8876, precision: 0.8895, recall: 0.9003, f1: 0.8949, speed: 6.90 step/s
+global step 2990, epoch: 1, batch: 2990, loss: 0.31969, accu: 0.8883, precision: 0.8906, recall: 0.9002, f1: 0.8954, speed: 6.80 step/s
+global step 3000, epoch: 1, batch: 3000, loss: 0.29126, accu: 0.8881, precision: 0.8905, recall: 0.8997, f1: 0.8951, speed: 6.66 step/s
+eval loss: 0.25646, accu: 0.8906, precision: 0.8606, recall: 0.9505, f1: 0.9033
+
+[2023-03-03 02:01:57,435] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:01:57,435] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 3010, epoch: 1, batch: 3010, loss: 0.17946, accu: 0.8930, precision: 0.8871, recall: 0.9184, f1: 0.9025, speed: 1.82 step/s
+global step 3020, epoch: 1, batch: 3020, loss: 0.29870, accu: 0.8935, precision: 0.8883, recall: 0.9089, f1: 0.8985, speed: 6.74 step/s
+global step 3030, epoch: 1, batch: 3030, loss: 0.19794, accu: 0.8913, precision: 0.8915, recall: 0.9012, f1: 0.8963, speed: 6.83 step/s
+global step 3040, epoch: 1, batch: 3040, loss: 0.27065, accu: 0.8891, precision: 0.8908, recall: 0.8983, f1: 0.8945, speed: 6.86 step/s
+global step 3050, epoch: 1, batch: 3050, loss: 0.22066, accu: 0.8915, precision: 0.8946, recall: 0.8996, f1: 0.8971, speed: 6.73 step/s
+global step 3060, epoch: 1, batch: 3060, loss: 0.26377, accu: 0.8895, precision: 0.8918, recall: 0.8997, f1: 0.8957, speed: 6.77 step/s
+global step 3070, epoch: 1, batch: 3070, loss: 0.32378, accu: 0.8885, precision: 0.8887, recall: 0.9004, f1: 0.8945, speed: 6.75 step/s
+global step 3080, epoch: 1, batch: 3080, loss: 0.32027, accu: 0.8894, precision: 0.8908, recall: 0.8993, f1: 0.8950, speed: 6.78 step/s
+global step 3090, epoch: 1, batch: 3090, loss: 0.25045, accu: 0.8898, precision: 0.8909, recall: 0.9000, f1: 0.8954, speed: 6.71 step/s
+global step 3100, epoch: 1, batch: 3100, loss: 0.31835, accu: 0.8896, precision: 0.8914, recall: 0.9002, f1: 0.8957, speed: 6.80 step/s
+global step 3110, epoch: 1, batch: 3110, loss: 0.32370, accu: 0.8883, precision: 0.8895, recall: 0.8996, f1: 0.8945, speed: 6.77 step/s
+global step 3120, epoch: 1, batch: 3120, loss: 0.24834, accu: 0.8888, precision: 0.8899, recall: 0.8995, f1: 0.8947, speed: 6.82 step/s
+global step 3130, epoch: 1, batch: 3130, loss: 0.19832, accu: 0.8892, precision: 0.8910, recall: 0.8997, f1: 0.8954, speed: 6.84 step/s
+global step 3140, epoch: 1, batch: 3140, loss: 0.30825, accu: 0.8881, precision: 0.8900, recall: 0.8986, f1: 0.8943, speed: 6.13 step/s
+global step 3150, epoch: 1, batch: 3150, loss: 0.22500, accu: 0.8890, precision: 0.8909, recall: 0.8989, f1: 0.8949, speed: 6.95 step/s
+global step 3160, epoch: 1, batch: 3160, loss: 0.18353, accu: 0.8888, precision: 0.8907, recall: 0.8987, f1: 0.8947, speed: 6.84 step/s
+global step 3170, epoch: 1, batch: 3170, loss: 0.31821, accu: 0.8890, precision: 0.8913, recall: 0.8983, f1: 0.8948, speed: 6.85 step/s
+global step 3180, epoch: 1, batch: 3180, loss: 0.21446, accu: 0.8884, precision: 0.8903, recall: 0.8980, f1: 0.8941, speed: 6.75 step/s
+global step 3190, epoch: 1, batch: 3190, loss: 0.21082, accu: 0.8889, precision: 0.8906, recall: 0.8987, f1: 0.8946, speed: 6.78 step/s
+global step 3200, epoch: 1, batch: 3200, loss: 0.25711, accu: 0.8892, precision: 0.8908, recall: 0.8987, f1: 0.8948, speed: 6.84 step/s
+eval loss: 0.24490, accu: 0.8946, precision: 0.8748, recall: 0.9382, f1: 0.9054
+
+[2023-03-03 02:02:31,043] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:02:31,043] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 3210, epoch: 1, batch: 3210, loss: 0.25230, accu: 0.8910, precision: 0.8923, recall: 0.8940, f1: 0.8931, speed: 1.82 step/s
+global step 3220, epoch: 1, batch: 3220, loss: 0.19547, accu: 0.8875, precision: 0.8906, recall: 0.8906, f1: 0.8906, speed: 6.67 step/s
+global step 3230, epoch: 1, batch: 3230, loss: 0.29243, accu: 0.8905, precision: 0.8936, recall: 0.8939, f1: 0.8937, speed: 6.83 step/s
+global step 3240, epoch: 1, batch: 3240, loss: 0.24864, accu: 0.8896, precision: 0.8929, recall: 0.8935, f1: 0.8932, speed: 7.01 step/s
+global step 3250, epoch: 1, batch: 3250, loss: 0.22024, accu: 0.8894, precision: 0.8921, recall: 0.8928, f1: 0.8924, speed: 6.58 step/s
+global step 3260, epoch: 1, batch: 3260, loss: 0.28707, accu: 0.8879, precision: 0.8912, recall: 0.8905, f1: 0.8908, speed: 6.77 step/s
+global step 3270, epoch: 1, batch: 3270, loss: 0.26809, accu: 0.8889, precision: 0.8927, recall: 0.8916, f1: 0.8921, speed: 6.93 step/s
+global step 3280, epoch: 1, batch: 3280, loss: 0.32059, accu: 0.8878, precision: 0.8903, recall: 0.8920, f1: 0.8912, speed: 6.68 step/s
+global step 3290, epoch: 1, batch: 3290, loss: 0.29879, accu: 0.8876, precision: 0.8909, recall: 0.8919, f1: 0.8914, speed: 6.96 step/s
+global step 3300, epoch: 1, batch: 3300, loss: 0.21845, accu: 0.8881, precision: 0.8913, recall: 0.8926, f1: 0.8919, speed: 6.68 step/s
+global step 3310, epoch: 1, batch: 3310, loss: 0.33493, accu: 0.8872, precision: 0.8892, recall: 0.8926, f1: 0.8909, speed: 6.82 step/s
+global step 3320, epoch: 1, batch: 3320, loss: 0.24360, accu: 0.8884, precision: 0.8911, recall: 0.8941, f1: 0.8926, speed: 6.96 step/s
+global step 3330, epoch: 1, batch: 3330, loss: 0.28183, accu: 0.8886, precision: 0.8907, recall: 0.8952, f1: 0.8930, speed: 6.83 step/s
+global step 3340, epoch: 1, batch: 3340, loss: 0.22694, accu: 0.8888, precision: 0.8906, recall: 0.8949, f1: 0.8928, speed: 6.76 step/s
+global step 3350, epoch: 1, batch: 3350, loss: 0.31796, accu: 0.8902, precision: 0.8923, recall: 0.8966, f1: 0.8944, speed: 6.74 step/s
+global step 3360, epoch: 1, batch: 3360, loss: 0.20588, accu: 0.8897, precision: 0.8918, recall: 0.8966, f1: 0.8942, speed: 6.63 step/s
+global step 3370, epoch: 1, batch: 3370, loss: 0.30704, accu: 0.8901, precision: 0.8926, recall: 0.8970, f1: 0.8948, speed: 6.83 step/s
+global step 3380, epoch: 1, batch: 3380, loss: 0.18031, accu: 0.8908, precision: 0.8926, recall: 0.8990, f1: 0.8958, speed: 6.81 step/s
+global step 3390, epoch: 1, batch: 3390, loss: 0.24038, accu: 0.8912, precision: 0.8932, recall: 0.8992, f1: 0.8962, speed: 6.73 step/s
+global step 3400, epoch: 1, batch: 3400, loss: 0.24649, accu: 0.8913, precision: 0.8933, recall: 0.8990, f1: 0.8962, speed: 6.73 step/s
+eval loss: 0.24305, accu: 0.8942, precision: 0.8781, recall: 0.9327, f1: 0.9046
+
+[2023-03-03 02:03:04,524] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:03:04,525] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 3410, epoch: 1, batch: 3410, loss: 0.19352, accu: 0.9030, precision: 0.9065, recall: 0.9029, f1: 0.9047, speed: 1.83 step/s
+global step 3420, epoch: 1, batch: 3420, loss: 0.25275, accu: 0.8910, precision: 0.8929, recall: 0.8938, f1: 0.8933, speed: 6.80 step/s
+global step 3430, epoch: 1, batch: 3430, loss: 0.23130, accu: 0.8923, precision: 0.8957, recall: 0.8951, f1: 0.8954, speed: 6.82 step/s
+global step 3440, epoch: 1, batch: 3440, loss: 0.18988, accu: 0.8950, precision: 0.8945, recall: 0.9028, f1: 0.8986, speed: 6.79 step/s
+global step 3450, epoch: 1, batch: 3450, loss: 0.23518, accu: 0.8938, precision: 0.8931, recall: 0.9025, f1: 0.8978, speed: 6.82 step/s
+global step 3460, epoch: 1, batch: 3460, loss: 0.22984, accu: 0.8957, precision: 0.8963, recall: 0.9041, f1: 0.9002, speed: 6.83 step/s
+global step 3470, epoch: 1, batch: 3470, loss: 0.20653, accu: 0.8969, precision: 0.8968, recall: 0.9050, f1: 0.9009, speed: 6.73 step/s
+global step 3480, epoch: 1, batch: 3480, loss: 0.30538, accu: 0.8969, precision: 0.8970, recall: 0.9051, f1: 0.9010, speed: 6.89 step/s
+global step 3490, epoch: 1, batch: 3490, loss: 0.25276, accu: 0.8966, precision: 0.8966, recall: 0.9053, f1: 0.9009, speed: 6.76 step/s
+global step 3500, epoch: 1, batch: 3500, loss: 0.29929, accu: 0.8965, precision: 0.8957, recall: 0.9061, f1: 0.9009, speed: 6.47 step/s
+global step 3510, epoch: 1, batch: 3510, loss: 0.29793, accu: 0.8966, precision: 0.8966, recall: 0.9054, f1: 0.9010, speed: 6.88 step/s
+global step 3520, epoch: 1, batch: 3520, loss: 0.26047, accu: 0.8961, precision: 0.8966, recall: 0.9048, f1: 0.9007, speed: 6.63 step/s
+global step 3530, epoch: 1, batch: 3530, loss: 0.24891, accu: 0.8952, precision: 0.8957, recall: 0.9041, f1: 0.8999, speed: 6.82 step/s
+global step 3540, epoch: 1, batch: 3540, loss: 0.23050, accu: 0.8950, precision: 0.8960, recall: 0.9037, f1: 0.8998, speed: 6.93 step/s
+global step 3550, epoch: 1, batch: 3550, loss: 0.21793, accu: 0.8946, precision: 0.8953, recall: 0.9039, f1: 0.8996, speed: 6.85 step/s
+global step 3560, epoch: 1, batch: 3560, loss: 0.21728, accu: 0.8950, precision: 0.8959, recall: 0.9038, f1: 0.8998, speed: 6.80 step/s
+global step 3570, epoch: 1, batch: 3570, loss: 0.29382, accu: 0.8952, precision: 0.8962, recall: 0.9043, f1: 0.9003, speed: 6.75 step/s
+global step 3580, epoch: 1, batch: 3580, loss: 0.22835, accu: 0.8952, precision: 0.8963, recall: 0.9045, f1: 0.9004, speed: 6.06 step/s
+global step 3590, epoch: 1, batch: 3590, loss: 0.27045, accu: 0.8947, precision: 0.8956, recall: 0.9043, f1: 0.8999, speed: 6.75 step/s
+global step 3600, epoch: 1, batch: 3600, loss: 0.21953, accu: 0.8946, precision: 0.8956, recall: 0.9042, f1: 0.8999, speed: 6.74 step/s
+eval loss: 0.23752, accu: 0.8992, precision: 0.8824, recall: 0.9375, f1: 0.9091
+
+[2023-03-03 02:03:38,183] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:03:38,183] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 3610, epoch: 1, batch: 3610, loss: 0.24398, accu: 0.8915, precision: 0.9052, recall: 0.8926, f1: 0.8988, speed: 1.85 step/s
+global step 3620, epoch: 1, batch: 3620, loss: 0.19290, accu: 0.8940, precision: 0.8987, recall: 0.9021, f1: 0.9004, speed: 6.79 step/s
+global step 3630, epoch: 1, batch: 3630, loss: 0.27114, accu: 0.8893, precision: 0.8970, recall: 0.8953, f1: 0.8962, speed: 6.98 step/s
+global step 3640, epoch: 1, batch: 3640, loss: 0.30032, accu: 0.8912, precision: 0.8976, recall: 0.8993, f1: 0.8985, speed: 6.82 step/s
+global step 3650, epoch: 1, batch: 3650, loss: 0.23709, accu: 0.8935, precision: 0.8960, recall: 0.9036, f1: 0.8998, speed: 6.76 step/s
+global step 3660, epoch: 1, batch: 3660, loss: 0.24647, accu: 0.8935, precision: 0.8959, recall: 0.9030, f1: 0.8994, speed: 6.90 step/s
+global step 3670, epoch: 1, batch: 3670, loss: 0.24684, accu: 0.8936, precision: 0.8961, recall: 0.9029, f1: 0.8995, speed: 6.84 step/s
+global step 3680, epoch: 1, batch: 3680, loss: 0.22780, accu: 0.8941, precision: 0.8958, recall: 0.9045, f1: 0.9001, speed: 6.79 step/s
+global step 3690, epoch: 1, batch: 3690, loss: 0.23936, accu: 0.8956, precision: 0.8974, recall: 0.9059, f1: 0.9016, speed: 6.73 step/s
+global step 3700, epoch: 1, batch: 3700, loss: 0.25087, accu: 0.8949, precision: 0.8968, recall: 0.9051, f1: 0.9009, speed: 6.78 step/s
+global step 3710, epoch: 1, batch: 3710, loss: 0.25477, accu: 0.8950, precision: 0.8969, recall: 0.9051, f1: 0.9010, speed: 6.82 step/s
+global step 3720, epoch: 1, batch: 3720, loss: 0.25665, accu: 0.8944, precision: 0.8965, recall: 0.9045, f1: 0.9005, speed: 6.87 step/s
+global step 3730, epoch: 1, batch: 3730, loss: 0.24002, accu: 0.8940, precision: 0.8957, recall: 0.9044, f1: 0.9000, speed: 6.88 step/s
+global step 3740, epoch: 1, batch: 3740, loss: 0.28790, accu: 0.8940, precision: 0.8963, recall: 0.9036, f1: 0.8999, speed: 6.86 step/s
+global step 3750, epoch: 1, batch: 3750, loss: 0.22673, accu: 0.8934, precision: 0.8945, recall: 0.9035, f1: 0.8990, speed: 6.00 step/s
+global step 3760, epoch: 1, batch: 3760, loss: 0.27935, accu: 0.8940, precision: 0.8956, recall: 0.9032, f1: 0.8994, speed: 6.83 step/s
+global step 3770, epoch: 1, batch: 3770, loss: 0.24658, accu: 0.8949, precision: 0.8972, recall: 0.9033, f1: 0.9002, speed: 6.79 step/s
+global step 3780, epoch: 1, batch: 3780, loss: 0.23549, accu: 0.8948, precision: 0.8970, recall: 0.9033, f1: 0.9002, speed: 6.67 step/s
+global step 3790, epoch: 1, batch: 3790, loss: 0.25569, accu: 0.8948, precision: 0.8964, recall: 0.9038, f1: 0.9001, speed: 6.83 step/s
+global step 3800, epoch: 1, batch: 3800, loss: 0.22744, accu: 0.8952, precision: 0.8971, recall: 0.9037, f1: 0.9004, speed: 6.87 step/s
+eval loss: 0.23978, accu: 0.8996, precision: 0.8814, recall: 0.9397, f1: 0.9096
+
+[2023-03-03 02:04:11,666] [    INFO] - tokenizer config file saved in ../user_data/model_data/tokenizer_config.json
+[2023-03-03 02:04:11,666] [    INFO] - Special tokens file saved in ../user_data/model_data/special_tokens_map.json
+global step 3810, epoch: 1, batch: 3810, loss: 0.20787, accu: 0.9060, precision: 0.9051, recall: 0.9171, f1: 0.9111, speed: 1.81 step/s
+global step 3820, epoch: 1, batch: 3820, loss: 0.25337, accu: 0.9000, precision: 0.9034, recall: 0.9093, f1: 0.9063, speed: 6.64 step/s
+global step 3830, epoch: 1, batch: 3830, loss: 0.25985, accu: 0.8992, precision: 0.8961, recall: 0.9108, f1: 0.9034, speed: 6.81 step/s
+global step 3840, epoch: 1, batch: 3840, loss: 0.24679, accu: 0.8990, precision: 0.8986, recall: 0.9089, f1: 0.9037, speed: 6.74 step/s
+global step 3850, epoch: 1, batch: 3850, loss: 0.18727, accu: 0.9003, precision: 0.9002, recall: 0.9103, f1: 0.9052, speed: 6.59 step/s
+global step 3860, epoch: 1, batch: 3860, loss: 0.20830, accu: 0.9009, precision: 0.9017, recall: 0.9102, f1: 0.9060, speed: 6.59 step/s
+global step 3870, epoch: 1, batch: 3870, loss: 0.27456, accu: 0.9010, precision: 0.9026, recall: 0.9095, f1: 0.9060, speed: 6.63 step/s
+global step 3880, epoch: 1, batch: 3880, loss: 0.21533, accu: 0.9001, precision: 0.9007, recall: 0.9094, f1: 0.9050, speed: 6.86 step/s
+global step 3890, epoch: 1, batch: 3890, loss: 0.29537, accu: 0.8995, precision: 0.9003, recall: 0.9088, f1: 0.9046, speed: 6.87 step/s
+global step 3900, epoch: 1, batch: 3900, loss: 0.17080, accu: 0.9001, precision: 0.9016, recall: 0.9084, f1: 0.9050, speed: 6.88 step/s
+global step 3910, epoch: 1, batch: 3910, loss: 0.28764, accu: 0.8984, precision: 0.9008, recall: 0.9060, f1: 0.9034, speed: 6.80 step/s
