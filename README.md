@@ -12,14 +12,14 @@ Python 3.7.4，详见requirements.txt
 * 5/iflytek 中文对话文本匹配挑战赛
 * 6/千言数据集：文本相似度
 
-| No. Links | Task | Best score | Best Date | 
+| No. Links | Type | Best score | Best Date | 
 |--|-|-|-|
-| 3/ http://contest.aicubes.cn/#/detail?topicId=23 | F1                                        | 0.5872  | 2023-03-03 02:12:23	  |
-| 5/ https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy | ACC                   | 0.94135 | 2023-03-03 02:13:55	  |
-| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | ACC         | 0.7880  | 2023-03-03 02:14       |
-| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | / lcqmc     | 0.8343  | 2023-03-03 02:14       |
-| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | / bq_corpus | 0.8307  | 2023-03-03 02:14       |
-| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | / paws-x    | 0.6990  | 2023-03-03 02:14       |
+| [TASK3](http://contest.aicubes.cn/#/detail?topicId=23) | F1                                        | 0.5872  | 2023-03-03 02:12:23	  |
+| [TASK5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy) | ACC                   | 0.94135 | 2023-03-03 02:13:55	  |
+| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | 0.7880  | 2023-03-03 02:14       |
+| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | 0.8343  | 2023-03-03 02:14       |
+| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | 0.8307  | 2023-03-03 02:14       |
+| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | 0.6990  | 2023-03-03 02:14       |
 | Total | | 0.7721 | 2023-03-03 |
 
 跨领域迁移的文本语义匹配
