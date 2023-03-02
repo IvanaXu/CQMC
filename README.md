@@ -14,12 +14,12 @@ Python 3.7.4，详见requirements.txt
 
 | No. Links | Type | *TOP* | Best score | Best Date | 
 |--|-|-|-|-|
-| [TASK3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5872  | 2023-03-03 02:12 |
-| [TASK5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9413  | 2023-03-03 02:13 |
-| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7880  | 2023-03-03 02:14 |
-| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8343  | 2023-03-03 02:14 |
-| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8307  | 2023-03-03 02:14 |
-| [TASK6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6990  | 2023-03-03 02:14 |
+| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5872  | 2023-03-03 02:12 |
+| [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9413  | 2023-03-03 02:13 |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7880  | 2023-03-03 02:14 |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8343  | 2023-03-03 02:14 |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8307  | 2023-03-03 02:14 |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6990  | 2023-03-03 02:14 |
 | Total | | | 0.7721 | 2023-03-03 |
 
 跨领域迁移的文本语义匹配
