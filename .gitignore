@@ -1,2 +1,13 @@
-user_data/model_data/model_state.pdparams
+
 .DS_Store
+
+user_data/model_data/model_state.pdparams
+
+code/test/__pycache__/*
+code/test/.ipynb_checkpoints/*
+
+code/train/__pycache__/*
+code/train/.ipynb_checkpoints/*
+
+code/.ipynb_checkpoints/*
+prediction_result/.ipynb_checkpoints/*
