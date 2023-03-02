@@ -38,39 +38,44 @@ d6_3 = pd.read_csv("../xfdata/6/lcqmc/train.tsv", sep="\t", header=None)
 d6_4 = pd.read_csv("../xfdata/6/lcqmc/dev.tsv", sep="\t", header=None)
 d6_5 = pd.read_csv("../xfdata/6/paws-x-zh/train.tsv", sep="\t", header=None)
 d6_6 = pd.read_csv("../xfdata/6/paws-x-zh/dev.tsv", sep="\t", header=None)
-# d6 = pd.concat([
-#     d6_1, d6_2, 
-#     d6_3, d6_4, 
-#     d6_5, d6_6
-# ])
-# del d6_1, d6_2, d6_3, d6_4, d6_5, d6_6
+d6 = pd.concat([
+    d6_1, d6_2, 
+    d6_3, d6_4, 
+    d6_5, d6_6
+])
+del d6_1, d6_2, d6_3, d6_4, d6_5, d6_6
 
 #
-trainE1 = pd.concat([
+trainE0 = pd.concat([
     pd.DataFrame(d1).rename({"query": 0, "title": 1, "label": 2}, axis=1),
     pd.DataFrame(d2).rename({"sentence1": 0, "sentence2": 1, "label": 2}, axis=1),
     d3.rename({1: 0, 2: 1, 0: 2}, axis=1),
     d4[["query1", "query2", "label"]].rename({"query1": 0, "query2": 1, "label": 2}, axis=1),
     d5,
-    # d6,
+    d6,
 ])
-print("E1", trainE1.shape)
+print("E0", trainE0.shape)
 
-print(pd.value_counts(trainE1[2], dropna=False))
-trainE1 = trainE1[~trainE1[2].isna()]
-trainE1[2] = trainE1[2].apply(int)
-print(pd.value_counts(trainE1[2], dropna=False))
-print("E1", trainE1.shape)
+print(pd.value_counts(trainE0[2], dropna=False))
+trainE0 = trainE0[~trainE0[2].isna()]
 
-trainE1.reset_index(drop=True, inplace=True)
-trainE1.drop_duplicates(
+trainE0[0] = ["/" if pd.isna(i) else str(i) for i in trainE0[0]]
+trainE0[1] = ["/" if pd.isna(i) else str(i) for i in trainE0[1]]
+trainE0[2] = trainE0[2].apply(int)
+print(pd.value_counts(trainE0[2], dropna=False))
+print("E0", trainE0.shape)
+
+trainE0.reset_index(drop=True, inplace=True)
+trainE0.drop_duplicates(
     inplace=False
 )
-print("E1 drop_duplicates", trainE1.shape)
-trainE1 = shuffle(trainE1, random_state=10086)
+print("E0 Drop_duplicates", trainE0.shape)
+trainE0 = shuffle(trainE0, random_state=10086)
 
+
+#
 trainE1, trainE2 = train_test_split(
-    trainE1,
+    trainE0,
     test_size=5000,
     random_state=930721,
 )

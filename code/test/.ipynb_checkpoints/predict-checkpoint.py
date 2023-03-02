@@ -195,7 +195,7 @@ if __name__ == "__main__":
     # 3
     test3 = pd.read_csv("../xfdata/3/test.tsv", sep="\t", header=None, nrows=args.cN)
     test3 = get_predict(test3[[0, 1]].to_numpy())
-    with open("../prediction_result/result3.json", "w") as f:
+    with open("../prediction_result/predict.json", "w") as f:
         for _r in test3:
             f.write(f'{{"label": {_r}}}\n')
 
@@ -209,7 +209,7 @@ if __name__ == "__main__":
         test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None, nrows=args.cN)
         test6 = get_predict(test6[[0, 1]].to_numpy())
         pd.DataFrame(test6, columns=["prediction"]).reset_index()[["index", "prediction"]].to_csv(
-            f"../prediction_result/{task.replace('-zh','')}.tsv")
+            f"../prediction_result/{task.replace('-zh','')}.tsv", index=False, sep="\t")
     # Predict Data
 
 
