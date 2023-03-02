@@ -192,10 +192,24 @@ if __name__ == "__main__":
     get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
     get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
     
+    # 3
+    test3 = pd.read_csv("../xfdata/3/test.tsv", sep="\t", header=None, nrows=args.cN)
+    test3 = get_predict(test3[[0, 1]].to_numpy())
+    with open("../prediction_result/result3.json", "w") as f:
+        for _r in test3:
+            f.write(f'{{"label": {_r}}}\n')
+
     # 5
     test5 = pd.read_csv("../xfdata/5/test.csv", sep="\t", header=None, nrows=args.cN)
     test5 = get_predict(test5[[0, 1]].to_numpy())
     pd.DataFrame(test5).to_csv("../prediction_result/result5.csv", index=False, header=False)
+
+    # 6
+    for task in ["bq_corpus", "lcqmc", "paws-x-zh"]:
+        test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None, nrows=args.cN)
+        test6 = get_predict(test6[[0, 1]].to_numpy())
+        pd.DataFrame(test6, columns=["prediction"]).reset_index()[["index", "prediction"]].to_csv(
+            f"../prediction_result/{task.replace('-zh','')}.tsv")
     # Predict Data
 
 

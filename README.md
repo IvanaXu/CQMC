@@ -8,6 +8,19 @@ Python 3.7.4，详见requirements.txt
 * 1/LCQMC
 * 2/AFQMC
 * 3/MOQMC 
+* 4/C19QMC 新冠疫情相似问句判定数据集
+* 5/iflytek 中文对话文本匹配挑战赛
+* 6/千言数据集：文本相似度
+
+| No. Links | Task | Best Score | Best Date | 
+|--|-|-|-|
+| 3/ http://contest.aicubes.cn/#/detail?topicId=23 | -                                       | 0.5384  | 2023-03-02 21:10:29    |
+| 5/ https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy | -                   | 0.87615 | 2023-03-02 21:07:12	|
+| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | score     | 0.6339  | 2023-03-02 21:42       |
+| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | lcqmc     | 0.7722  | 2023-03-02 21:42       |
+| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | bq_corpus | 0.6331  | 2023-03-02 21:42       |
+| 6/ https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition | paws-x    | 0.4965  | 2023-03-02 21:42       |
+
 跨领域迁移的文本语义匹配
 
 
