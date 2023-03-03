@@ -1,1 +1,0 @@
-[{'name': 'qvslia', 'rank': -1, 'replicas': 1, 'dtype': 'gpu', 'candidate': '10.40.75.167:59870', 'endpoints': '10.40.75.167:59871'}]
