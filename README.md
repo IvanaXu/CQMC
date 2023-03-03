@@ -12,17 +12,16 @@ Python 3.7.4，详见requirements.txt
 * 5/iflytek 中文对话文本匹配挑战赛
 * 6/千言数据集：文本相似度
 
-| No. Links | Type | *TOP* | Best score | Best Date | 
+| No. Links | Type | *TOP* | Score | UP |
 |--|-|-|-|-|
-| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5872  | 2023-03-03 02:12 |
-| [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9413  | 2023-03-03 02:13 |
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7880  | 2023-03-03 02:14 |
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8343  | 2023-03-03 02:14 |
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8307  | 2023-03-03 02:14 |
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6990  | 2023-03-03 02:14 |
-| Total | | | 0.7721 | 2023-03-03 |
-
-跨领域迁移的文本语义匹配
+| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5865  | - |
+| [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9986  | + |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.8179  | + |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8474  | + |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8414  | + |
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7650  | + |
+| Total | | | 0.8014 | + |
+> Updated 2023-03-03.
 
 
 (2.2)
