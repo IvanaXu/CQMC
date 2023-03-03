@@ -2,6 +2,7 @@
 .DS_Store
 
 user_data/model_data/model_state.pdparams
+user_data/cut_data/*.csv
 
 code/test/__pycache__/*
 code/test/.ipynb_checkpoints/*

@@ -5,6 +5,13 @@ Python 3.7.4，详见requirements.txt
 
 ### 二、数据生成
 (2.1)
+
+> THX
+>
+> https://github.com/liucongg/NLPDataSet
+>
+> https://paddlenlp.readthedocs.io/zh/latest/data_prepare/dataset_list.html
+
 * 1/LCQMC
 * 2/AFQMC
 * 3/MOQMC 
