@@ -1,5 +1,5 @@
 
-batch=180
+batch=200
 time python test/predict.py --device gpu --params_path ../user_data/model_data/model_state.pdparams --batch_size $batch
 
 cd ../prediction_result

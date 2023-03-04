@@ -45,6 +45,23 @@ d6 = pd.concat([
 ])
 del d6_1, d6_2, d6_3, d6_4, d6_5, d6_6
 
+# 7/BUSTM FewCLUE 评测中对话短文本语义匹配数据集 2分类任务
+d7 = load_dataset("fewclue", "bustm")
+d7 = pd.concat([pd.DataFrame(list(i)) for i in d7])
+d7 = d7.rename({"sentence1": 0, "sentence2": 1, "label": 2}, axis=1)[[0, 1, 2]]
+
+# 8/CMNLI 中文语言推理任务
+# 中立 neutral(0), 蕴含 entailment(1), 矛盾 contradiction(2)
+# 很多论文已经提出，使用矛盾文本对作为难负例训练模型，可以提高模型效果
+_ds1, _ds2, _ds3 = load_dataset("clue", "cmnli")
+print(len(_ds1), len(_ds2), len(_ds3))
+d8 = [i for _ds in [_ds1, _ds2] for i in _ds]
+d8 = pd.DataFrame(d8).rename({"sentence1": 0, "sentence2": 1, "label": 2}, axis=1)
+d8[2] = d8[2].apply(lambda x: 1 if x == 1 else 0)
+
+
+
+
 #
 trainE0 = pd.concat([
     pd.DataFrame(d1).rename({"query": 0, "title": 1, "label": 2}, axis=1),
@@ -53,6 +70,8 @@ trainE0 = pd.concat([
     d4[["query1", "query2", "label"]].rename({"query1": 0, "query2": 1, "label": 2}, axis=1),
     d5,
     d6,
+    d7,
+    d8,
 ])
 print("E0", trainE0.shape)
 
