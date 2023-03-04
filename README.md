@@ -18,6 +18,9 @@ Python 3.7.4，详见requirements.txt
 * 4/C19QMC 新冠疫情相似问句判定数据集
 * 5/iflytek 中文对话文本匹配挑战赛
 * 6/千言数据集：文本相似度
+* 7/BUSTM FewCLUE 评测中对话短文本语义匹配数据集 2分类任务
+* 8/CMNLI 中文语言推理任务
+
 
 | No. Links | Type | *TOP* | Score | UP |
 |--|-|-|-|-|
