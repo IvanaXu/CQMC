@@ -57,56 +57,98 @@ ERNIE(Enhanced Representation through Knowledge Integration)，支持ERNIE 1.0�
 ### 四、文件结构
 ```
 % tree
-├── README.md
+project
 ├── code
+│   ├── 1.sh
+│   ├── 2.sh
 │   ├── log
-│   │   ├── endpoints.log
-│   │   └── workerlog.0
+│   │   ├── default.gpu.log
+│   │   ├── default.ifyfyf.log
+│   │   ├── workerlog.0
+│   │   ├── workerlog.1
+│   │   ├── workerlog.2
+│   │   └── workerlog.3
 │   ├── test
 │   │   ├── model.py
-│   │   └── predict.py
-│   ├── test.sh
-│   ├── train
-│   │   ├── cdata.py
-│   │   ├── model.py
-│   │   └── train.py
-│   └── train.sh
+│   │   ├── predict.py
+│   │   └── __pycache__
+│   │       └── model.cpython-37.pyc
+│   └── train
+│       ├── cdata.py
+│       ├── model.py
+│       ├── __pycache__
+│       │   └── model.cpython-37.pyc
+│       └── train.py
 ├── prediction_result
-│   └── result.csv
+│   ├── bq_corpus.tsv
+│   ├── lcqmc.tsv
+│   ├── paws-x.tsv
+│   ├── predict.json
+│   ├── result5.csv
+│   └── result6.zip
 ├── requirements.txt
 ├── user_data
 │   ├── cut_data
+│   │   ├── md5
 │   │   ├── trainE1.csv
 │   │   └── trainE2.csv
 │   └── model_data
 │       ├── model_state.pdparams
-│       ├── model_state.pdparams-result-trainE1.csv
-│       ├── model_state.pdparams-result-trainE2.csv
-│       ├── model_state.pdparams-result.csv
-│       ├── model_state.pdparams-result.json
-│       ├── predict.json
 │       ├── special_tokens_map.json
 │       ├── tokenizer_config.json
 │       └── vocab.txt
 └── xfdata
-    ├── test.csv
-    └── train.csv
+    ├── 1
+    │   ├── 2205.11097.pdf
+    │   └── similarity_ch.zip
+    ├── 2
+    │   ├── dev.json
+    │   ├── test.json
+    │   └── train.json
+    ├── 3
+    │   ├── test.tsv
+    │   └── train.tsv
+    ├── 4
+    │   ├── test.csv
+    │   └── test.label.csv
+    ├── 5
+    │   ├── test.csv
+    │   └── train.csv
+    └── 6
+        ├── bq_corpus
+        │   ├── dev.tsv
+        │   ├── License.pdf
+        │   ├── test.tsv
+        │   ├── train.tsv
+        │   └── User_Agreement.pdf
+        ├── lcqmc
+        │   ├── dev.tsv
+        │   ├── License.pdf
+        │   ├── test.tsv
+        │   ├── train.tsv
+        │   └── User_Agreement.pdf
+        └── paws-x-zh
+            ├── dev.tsv
+            ├── License.pdf
+            ├── test.tsv
+            └── train.tsv
 ```
-其中，
+其中，未在源码内，可通过以下链接下载：
 * project/user_data/model_data/model_state.pdparams
-约400M，未在压缩包内，可通过以下链接下载
-> https://ivan-bucket-out-001.oss-cn-beijing.aliyuncs.com/out/model_state.pdparams
+* project/user_data/cut_data/trainE1.csv
+* project/user_data/cut_data/trainE2.csv
+> 链接: https://pan.baidu.com/s/1gGvyXOtoRtpMGqwTu65aqw 提取码: t3it 
 
 
 ### 五、过程复现
 #### 1) 训练
 ```
 cd project/code
-sh train.sh
+sh 1.sh
 ```
 
 #### 2) 预测
 ```
 cd project/code
-sh test.sh
+sh 2.sh
 ```
