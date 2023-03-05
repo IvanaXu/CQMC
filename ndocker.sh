@@ -1,0 +1,1 @@
+sudo nvidia-docker run -ti --gpus all -v /data/code/CQMC:/CQMC registry.baidubce.com/paddlepaddle/paddle:2.4.0-gpu-cuda11.2-cudnn8.1-trt8.0 /bin/bash

@@ -152,8 +152,8 @@ if __name__ == "__main__":
 
     # ErnieTinyTokenizer is special for ernie-tiny pretained model.
     # ernie-tiny/roberta-wwm-ext
-    pretrained_model = AutoModel.from_pretrained('ernie-3.0-medium-zh')
-    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-medium-zh')
+    pretrained_model = AutoModel.from_pretrained('ernie-3.0-nano-zh')
+    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-nano-zh')
     model = SentenceTransformer(pretrained_model)
 
     if args.params_path and os.path.isfile(args.params_path):
@@ -186,13 +186,14 @@ if __name__ == "__main__":
             return result
 
     # Predict Data
-    """
-    trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
-    trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
+    # """
+    # trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
+    # trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
 
-    get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
-    get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
-    """
+    # get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
+    # get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
+    # """
+    
     
     # 3
     test3 = pd.read_csv("../xfdata/3/test.tsv", sep="\t", header=None, nrows=args.cN)

@@ -1,5 +1,6 @@
 
-batch=200
+batch=16
+cp ../user_data/model_data/model_state.pdparams ../user_data/model_data/model_state_CNT.pdparams
 time python test/predict.py --device gpu --params_path ../user_data/model_data/model_state.pdparams --batch_size $batch
 
 cd ../prediction_result
