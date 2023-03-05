@@ -171,27 +171,26 @@ if __name__ == "__main__":
         result = [result_map.get(r_predict[idx]) for idx, text in enumerate(data)]
 
         if len(label) > 0:
-            print(f"\nAccuracy_score: {metrics.accuracy_score(label, result):.5f} F1: {metrics.f1_score(label, result):.5f}")
+            print(f"\n{name} Accuracy_score: {metrics.accuracy_score(label, result):.5f} F1: {metrics.f1_score(label, result):.5f}")
 
             _data = pd.DataFrame(data)
             _data[0] = _data[0].apply(lambda x: f"|{x}|")
             _data[1] = _data[1].apply(lambda x: f"|{x}|")
             _data["label"], _data["result"] = label, result
             _data = _data[_data["label"] != _data["result"]]
-            print(_data.to_string())
-            _data.to_csv(
-                f"{args.params_path}-result-{name}.csv", index=False
-            )
+            
+            # print(_data.to_string())
+            # _data.to_csv(f"{args.params_path}-result-{name}.csv", index=False)
         else:
             return result
 
     # Predict Data
     # """
     # trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
-    # trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
+    trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
 
     # get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
-    # get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
+    get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
     # """
     
     
