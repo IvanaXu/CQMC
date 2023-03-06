@@ -1,4 +1,6 @@
 
+clear
+
 dt=$(date "+%Y%m%d%H%M%S")
 
 batch=16

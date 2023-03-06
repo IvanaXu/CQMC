@@ -171,7 +171,7 @@ if __name__ == "__main__":
         result = [result_map.get(r_predict[idx]) for idx, text in enumerate(data)]
 
         if len(label) > 0:
-            print(f"\n{name} Accuracy_score: {metrics.accuracy_score(label, result):.5f} F1: {metrics.f1_score(label, result):.5f}")
+            print(f"\n{name} ACC: {metrics.accuracy_score(label, result):.5f} F1: {metrics.f1_score(label, result):.5f}")
 
             _data = pd.DataFrame(data)
             _data[0] = _data[0].apply(lambda x: f"|{x}|")

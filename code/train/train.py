@@ -247,7 +247,7 @@ def do_train():
             global_step += 1
             if global_step % 10 == 0 and rank == 0:
                 print(
-                    "global step %d, epoch: %d, batch: %d, loss: %.5f, accu: %.4f, precision: %.4f, recall: %.4f, f1: %.4f, speed: %.2f step/s"
+                    "Step %d, Epoch: %d, Batch: %d, Loss: %.4f, ACC: %.4f, P: %.4f, R: %.4f, F1: %.4f, Speed: %.2f it/s"
                     % (global_step, epoch, step, loss, accu[0], accu[1], accu[2], accu[3], 10 /
                        (time.time() - tic_train)))
                 tic_train = time.time()
