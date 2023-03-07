@@ -152,8 +152,8 @@ if __name__ == "__main__":
 
     # ErnieTinyTokenizer is special for ernie-tiny pretained model.
     # ernie-tiny/roberta-wwm-ext
-    pretrained_model = AutoModel.from_pretrained('ernie-3.0-base-zh')
-    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-base-zh')
+    pretrained_model = AutoModel.from_pretrained('ernie-3.0-medium-zh')
+    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-medium-zh')
     model = SentenceTransformer(pretrained_model)
 
     if args.params_path and os.path.isfile(args.params_path):

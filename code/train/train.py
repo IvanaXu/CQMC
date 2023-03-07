@@ -178,8 +178,8 @@ def do_train():
     dev_ds = load_dataset(read, data_path='../user_data/cut_data/trainE2.csv', lazy=False)
 
     # ernie-tiny/roberta-wwm-ext
-    pretrained_model = AutoModel.from_pretrained('ernie-3.0-base-zh')
-    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-base-zh')
+    pretrained_model = AutoModel.from_pretrained('ernie-3.0-medium-zh')
+    tokenizer = AutoTokenizer.from_pretrained('ernie-3.0-medium-zh')
     
     trans_func = partial(convert_example,
                          tokenizer=tokenizer,
