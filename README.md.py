@@ -1,15 +1,18 @@
+import os
 import datetime
 
+version = "#7"
 scoreL = """
-0.5739
-0.9869
-0.8469
-0.8372
-0.7919
-0.6915
+0.5782
+0.9918
+0.8448
+0.8306
+0.7951
+0.7100
 """
 scoreL = [float(i) for i in scoreL.split("\n") if i]
-print(scoreL)
+score = (scoreL[0]+scoreL[1]+scoreL[4])/3
+print(scoreL, round(score, 4))
 
 
 with open("README.md", "r") as f:
@@ -58,5 +61,7 @@ with open("README.md", "w") as f:
         
         f.write(i)
 
+os.system(f"""git add * && git commit -m "{version} {score:.4f}" && git push""")
+        
 
 
