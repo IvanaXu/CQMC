@@ -18,7 +18,7 @@ print(scoreL, round(score, 4))
 with open("README.md", "r") as f:
     base = f.readlines()
 
-fUP = lambda new, old: '+' if new > old else '-'
+fUP = lambda new, old: '+' if new > old else ('=' if new == old else '-')
 
 
 with open("README.md", "w") as f:
@@ -61,6 +61,7 @@ with open("README.md", "w") as f:
         
         f.write(i)
 
+#
 os.system(f"""git add * && git commit -m "{version} {score:.4f}" && git push""")
         
 
