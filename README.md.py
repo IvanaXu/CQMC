@@ -1,12 +1,12 @@
 import datetime
 
 scoreL = """
-0.5741
-0.98355
-0.8433
-0.8369
-0.7911
-0.693
+0.5739
+0.9869
+0.8469
+0.8372
+0.7919
+0.6915
 """
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 print(scoreL)
@@ -20,6 +20,7 @@ fUP = lambda new, old: '+' if new > old else '-'
 
 with open("README.md", "w") as f:
     for i in base:
+        
         #
         if "TASK-" in i:
             old = float(i[114:].replace("+","").replace("-","").replace(" ||\n", ""))
