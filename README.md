@@ -31,7 +31,7 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8306 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7100 |=|
 | Total | | | 0.7884 |-|
-> Updated  2023-03-09 08:43:45.575023.
+> Updated  2023-03-09 08:46:27.334912.
 
 
 (2.2)
@@ -74,12 +74,9 @@ project
 │   ├── 1.sh
 │   ├── 2.sh
 │   ├── log
+│   │   ├── default.dohgxk.log
 │   │   ├── default.gpu.log
-│   │   ├── default.ifyfyf.log
-│   │   ├── workerlog.0
-│   │   ├── workerlog.1
-│   │   ├── workerlog.2
-│   │   └── workerlog.3
+│   │   └── workerlog.0
 │   ├── test
 │   │   ├── model.py
 │   │   ├── predict.py
@@ -91,13 +88,18 @@ project
 │       ├── __pycache__
 │       │   └── model.cpython-37.pyc
 │       └── train.py
+├── LICENSE
+├── ndocker.sh
 ├── prediction_result
 │   ├── bq_corpus.tsv
+│   ├── download_20230308223931.zip
 │   ├── lcqmc.tsv
 │   ├── paws-x.tsv
 │   ├── predict.json
 │   ├── result5.csv
 │   └── result6.zip
+├── README.md
+├── README.md.py
 ├── requirements.txt
 ├── user_data
 │   ├── cut_data
@@ -105,6 +107,7 @@ project
 │   │   ├── trainE1.csv
 │   │   └── trainE2.csv
 │   └── model_data
+│       ├── model_state_20230308223931.pdparams
 │       ├── model_state.pdparams
 │       ├── special_tokens_map.json
 │       ├── tokenizer_config.json
@@ -144,6 +147,7 @@ project
             ├── License.pdf
             ├── test.tsv
             └── train.tsv
+
 ```
 其中，未在源码内，可通过以下链接下载：
 * project/user_data/model_data/model_state.pdparams
