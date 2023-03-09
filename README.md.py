@@ -17,7 +17,9 @@ print(scoreL, round(score, 4))
 
 with open("README.md", "r") as f:
     base = f.readlines()
-
+    
+#
+fOLD = lambda x: float(x.replace("+","").replace("-","").replace("=","").replace(" ||\n", ""))
 fUP = lambda new, old: '+' if new > old else ('=' if new == old else '-')
 
 
@@ -26,7 +28,7 @@ with open("README.md", "w") as f:
         
         #
         if "TASK-" in i:
-            old = float(i[114:].replace("+","").replace("-","").replace(" ||\n", ""))
+            old = fOLD(i[114:])
             if "TASK-3" in i:
                 new = scoreL[0]
                 
@@ -50,7 +52,7 @@ with open("README.md", "w") as f:
         
         #
         if "Total" in i:
-            old = float(i[13:].replace("+","").replace("-","").replace(" ||\n", ""))
+            old = fOLD(i[13:])
             new = (scoreL[0]+scoreL[1]+scoreL[4])/3
             
             i = f"{i[:13]} {new:.4f} |{fUP(new, old)}|\n"
