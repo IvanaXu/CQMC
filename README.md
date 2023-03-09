@@ -12,8 +12,8 @@ Python 3.7.4，详见requirements.txt
 >
 > https://paddlenlp.readthedocs.io/zh/latest/data_prepare/dataset_list.html
 
-* 1/LCQMC
-* 2/AFQMC
+* 1/LCQMC A Large-scale Chinese Question Matching Corpus
+* 2/AFQMC 蚂蚁金融语义相似度 Ant Financial Question Matching Corpus
 * 3/MOQMC 同花顺算法挑战-跨领域迁移的文本语义匹配
 * 4/C19QMC 新冠疫情相似问句判定数据集
 * 5/iflytek 中文对话文本匹配挑战赛
@@ -31,7 +31,7 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8306 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7100 |=|
 | Total | | | 0.7884 |-|
-> Updated  2023-03-09 09:48:34.298447.
+> Updated  2023-03-09 09:53:01.961880.
 
 
 (2.2)
