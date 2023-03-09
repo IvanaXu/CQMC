@@ -1,7 +1,6 @@
 import os
 import datetime
 
-version = "#7"
 scoreL = """
 0.5782
 0.9918
@@ -64,7 +63,9 @@ with open("README.md", "w") as f:
         f.write(i)
 
 #
-os.system(f"""git add * && git commit -m "{version} {score:.4f}" && git push""")
+p1 = "#7"
+p2 = "Epoch:12"
+os.system(f"""git add * && git commit -m "{p1} {p2} /{score:.4f}" && git push""")
         
 
 
