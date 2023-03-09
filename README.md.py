@@ -14,7 +14,7 @@ scoreL = """
 """
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]+scoreL[1]+scoreL[4])/3
-print(scoreL, round(score, 4))
+print(scoreL, round(score, 4), "\n")
 
 
 with open("README.md", "r") as f:
