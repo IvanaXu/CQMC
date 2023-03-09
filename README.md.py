@@ -1,6 +1,9 @@
 import os
 import datetime
 
+os.system("clear")
+
+
 scoreL = """
 0.5782
 0.9918
