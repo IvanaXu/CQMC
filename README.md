@@ -31,7 +31,7 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8306 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7100 |=|
 | Total | | | 0.7884 |-|
-> Updated  2023-03-09 08:39:16.470254.
+> Updated  2023-03-09 08:43:45.575023.
 
 
 (2.2)
@@ -47,7 +47,19 @@ wrongE1/wrongE2部分，由训练后trainE1/trainE2中预测错误部分如：
 > https://github.com/PaddlePaddle/PaddleNLP/tree/develop/examples/text_matching/sentence_transformers
 > 
 
-ERNIE(Enhanced Representation through Knowledge Integration)，支持ERNIE 1.0中文模型（简写ernie-1.0）和ERNIE Tiny中文模型（简写ernie-tiny)。 其中ernie由12层Transformer网络组成，ernie-tiny由3层Transformer网络组成。
+本次开源的模型是文心大模型 ERNIE 3.0, 文心大模型 ERNIE 3.0 作为百亿参数知识增强的大模型，除了从海量文本数据中学习词汇、结构、语义等知识外，还从大规模知识图谱中学习。 基础上通过在线蒸馏技术得到的轻量级模型，模型结构与 ERNIE 2.0 保持一致，相比 ERNIE 2.0 具有更强的中文效果。
+
+相关技术详解可参考文章[《解析全球最大中文单体模型鹏城-百度·文心技术细节》](https://www.jiqizhixin.com/articles/2021-12-08-9)
+
+在线蒸馏技术
+在线蒸馏技术在模型学习的过程中周期性地将知识信号传递给若干个学生模型同时训练，从而在蒸馏阶段一次性产出多种尺寸的学生模型。相对传统蒸馏技术，该技术极大节省了因大模型额外蒸馏计算以及多个学生的重复知识传递带来的算力消耗。
+
+这种新颖的蒸馏方式利用了文心大模型的规模优势，在蒸馏完成后保证了学生模型的效果和尺寸丰富性，方便不同性能需求的应用场景使用。此外，由于文心大模型的模型尺寸与学生模型差距巨大，模型蒸馏难度极大甚至容易失效。为此，通过引入了助教模型进行蒸馏的技术，利用助教作为知识传递的桥梁以缩短学生模型和大模型表达空间相距过大的问题，从而促进蒸馏效率的提升。
+
+更多技术细节可以参考论文：
+
+[ERNIE-Tiny: A Progressive Distillation Framework for Pretrained Transformer Compression](https://arxiv.org/abs/2106.02241)
+[ERNIE 3.0 Titan: Exploring Larger-scale Knowledge Enhanced Pre-training for Language Understanding and Generation](https://arxiv.org/abs/2112.12731)
 
 更多预训练模型，参考:
 > https://paddlenlp.readthedocs.io/zh/latest/model_zoo/index.html#transformer
