@@ -67,7 +67,7 @@ with open("README.md", "w") as f:
 
 #
 p1 = "#7"
-p2 = "Epoch:12"
+p2 = "Epoch:23"
 os.system(f"""git add * && git commit -m "{p1} {p2} /{score:.4f} ~" && git push""")
         
 
