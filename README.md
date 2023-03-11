@@ -31,7 +31,7 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8390 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7015 |=|
 | Total | | | 0.7957 |+|
-> Updated  2023-03-11 23:32:57.954003.
+> Updated  2023-03-12 00:01:44.059393.
 
 
 (2.2)
