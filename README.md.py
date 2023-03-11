@@ -5,12 +5,12 @@ os.system("clear")
 
 
 scoreL = """
-0.5857
-0.9963
-0.8417
-0.8278
-0.7948
-0.715
+0.5953
+0.9978
+0.8418
+0.839
+0.7941
+0.7015
 """
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]+scoreL[1]+scoreL[4])/3
