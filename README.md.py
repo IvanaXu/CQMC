@@ -3,7 +3,8 @@ import datetime
 
 os.system("clear")
 
-
+p1 = "#7"
+p2 = "Epoch:29"
 scoreL = """
 0.5953
 0.9978
@@ -12,6 +13,7 @@ scoreL = """
 0.7941
 0.7015
 """
+
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]+scoreL[1]+scoreL[4])/3
 print(scoreL, round(score, 4), "\n")
@@ -66,8 +68,6 @@ with open("README.md", "w") as f:
         f.write(i)
 
 #
-p1 = "#7"
-p2 = "Epoch:23"
 os.system(f"""git add * && git commit -m "{p1} {p2} /{score:.4f} ~" && git push""")
         
 
