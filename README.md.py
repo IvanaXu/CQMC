@@ -4,14 +4,14 @@ import datetime
 os.system("clear")
 
 p1 = "#7"
-p2 = "Epoch:29"
+p2 = "Epoch:34"
 scoreL = """
-0.5953
-0.9978
-0.8418
-0.839
-0.7941
-0.7015
+0.5869
+0.99835
+0.842
+0.8357
+0.7964
+0.7115
 """
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
