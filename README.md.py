@@ -3,7 +3,7 @@ import datetime
 
 os.system("clear")
 
-p1 = "#7"
+p1 = "#7 #8"
 p2 = "Epoch:51"
 scoreL = """
 0.5881
@@ -16,7 +16,7 @@ scoreL = """
 test = "ACC: 0.90180 F1: 0.89135"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
-score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3
+score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0
 print(scoreL, round(score, 4), "\n")
 
 
