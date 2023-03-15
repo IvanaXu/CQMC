@@ -4,7 +4,7 @@ import datetime
 os.system("clear")
 
 p1 = "#7"
-p2 = "Epoch:48"
+p2 = "Epoch:51"
 scoreL = """
 0.5839
 0.9995
@@ -13,6 +13,7 @@ scoreL = """
 0.7965
 0.704
 """
+test = "ACC: 0.90180 F1: 0.89135"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]+scoreL[1]+scoreL[4])/3
@@ -63,7 +64,7 @@ with open("README.md", "w") as f:
         
         #
         if "Updated" in i:
-            i = f"{i[:10]} {str(datetime.datetime.now())}.\n"
+            i = f"{i[:10]} {str(datetime.datetime.now())}, Test {test}.\n"
         
         f.write(i)
 
