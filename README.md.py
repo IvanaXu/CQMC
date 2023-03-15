@@ -3,17 +3,18 @@ import datetime
 
 os.system("clear")
 
-p1 = "#7"
-p2 = "Epoch:51"
+p1 = "#8"
+p2 = "Epoch:1"
 scoreL = """
-0.5948
-0.9994
-0.8369
-0.8337
-0.7927
-0.7075
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
+0.0000
 """
-test = "ACC: 0.90580 F1: 0.89503"
+test = "ACC: 0.72760 F1: 0.72474"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0
@@ -53,6 +54,12 @@ with open("README.md", "w") as f:
             if "TASK-6" in i and "paws-x" in i:
                 new = scoreL[5]
             
+            i = f"{i[:114]} {new:.4f} |{fUP(new, old)}|\n"
+        
+        #
+        if "v0.4" in i:
+            old = fOLD(i[114:])
+            new = scoreL[6]
             i = f"{i[:114]} {new:.4f} |{fUP(new, old)}|\n"
         
         #

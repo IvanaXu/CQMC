@@ -72,6 +72,7 @@ trainE0 = pd.concat([
     d6,
     d7,
     d8,
+    pd.read_csv('../user_data/cut_data/trainE3.csv', header=None, sep="\t"),
 ])
 print("E0", trainE0.shape)
 

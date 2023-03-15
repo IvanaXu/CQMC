@@ -188,9 +188,11 @@ if __name__ == "__main__":
     # """
     # trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None, nrows=args.cN)
     trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None, nrows=args.cN)
-
+    trainE3 = pd.read_csv("../user_data/cut_data/trainE3.csv", sep="\t", header=None, nrows=args.cN)
+    
     # get_predict(trainE1[[0, 1]].to_numpy(), trainE1[2], "trainE1")
     get_predict(trainE2[[0, 1]].to_numpy(), trainE2[2], "trainE2")
+    get_predict(trainE3[[0, 1]].to_numpy(), trainE3[2], "trainE3")
     # """
     
     
