@@ -30,8 +30,8 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8376 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8372 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7095 |=|
-| Total | | | 0.7941 |-|
-> Updated  2023-03-15 12:46:59.482079, Test ACC: 0.90180 F1: 0.89135.
+| Total | | | 0.9222 |+|
+> Updated  2023-03-15 12:48:12.501779, Test ACC: 0.90180 F1: 0.89135.
 
 
 (2.2)

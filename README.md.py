@@ -58,7 +58,7 @@ with open("README.md", "w") as f:
         #
         if "Total" in i:
             old = fOLD(i[13:])
-            new = (scoreL[0]+scoreL[1]+scoreL[4])/3
+            new = score
             
             i = f"{i[:13]} {new:.4f} |{fUP(new, old)}|\n"
         
