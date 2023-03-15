@@ -24,6 +24,9 @@ Python 3.7.4，详见requirements.txt
 
 | No. Links | Type | *TOP* | Score | UP |
 |--|-|-|-|-|
+| v0.1 SAS                                                                              | F1          | *0.2653* |        |-|
+| v0.2 XYSH                                                                             | F1          | *0.3483* |        |-|
+| v0.3 CROSS v0.1 + v0.2                                                                | F1          | *0.3696* |        |-|
 | [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5948 |=|
 | [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9994 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7927 |=|
@@ -31,7 +34,7 @@ Python 3.7.4，详见requirements.txt
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8337 |=|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.7075 |=|
 | Total | | | 0.9250 |-|
-> Updated  2023-03-15 13:40:46.060470, Test ACC: 0.90580 F1: 0.89503.
+> Updated  2023-03-16 00:04:32.769588, Test ACC: 0.90580 F1: 0.89503.
 
 
 (2.2)
