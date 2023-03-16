@@ -4,7 +4,7 @@ import datetime
 os.system("clear")
 
 p1 = "#8"
-p2 = "Epoch:1"
+p2 = "Epoch:4"
 scoreL = """
 0.5403
 0.867
