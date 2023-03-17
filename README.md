@@ -28,14 +28,14 @@ Python 3.7.4，详见requirements.txt
 | v0.2 XYSH                                                                             | F1          | *0.3483* |        |-|
 | v0.3 CROSS v0.1 + v0.2                                                                | F1          | *0.3696* |        |-|
 | v0.4                                                                                  | F1          | *0.3696* | 0.9621 |+|
-| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5919 |+|
+| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5919 |=|
 | [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9903 |+|
 | [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7897 |=|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8345 |-|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8396 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6950 |-|
-| Total | | | 0.9194 |+|
-> Updated  2023-03-17 22:51:58.164630, Test ACC: 0.89460 F1: 0.88058.
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8345 |=|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8396 |=|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6950 |=|
+| Total | | | 0.9194 |-|
+> Updated  2023-03-18 00:29:30.742883, Test ACC: 0.89460 F1: 0.88058.
 
 
 (2.2)
