@@ -6,15 +6,15 @@ os.system("clear")
 p1 = "#8 (After #7)"
 p2 = "Epoch:30"
 scoreL = """
-0.5868
-0.99745
-0.8402
-0.8392
-0.7888
-0.687
-0.98715
+0.5902
+0.997
+0.8362
+0.839
+0.7869
+0.6855
+0.98952
 """
-test = "ACC: 0.90040 F1: 0.88728"
+test = "ACC: 0.90340 F1: 0.89158"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0

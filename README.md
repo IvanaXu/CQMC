@@ -27,15 +27,15 @@ Python 3.7.4，详见requirements.txt
 | v0.1 SAS                                                                              | F1          | *0.2653* |        |-|
 | v0.2 XYSH                                                                             | F1          | *0.3483* |        |-|
 | v0.3 CROSS v0.1 + v0.2                                                                | F1          | *0.3696* |        |-|
-| v0.4                                                                                  | F1          | *0.3696* | 0.9871 |-|
-| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5868 |-|
-| [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9974 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7888 |-|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8402 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8392 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6870 |-|
-| Total | | | 0.9187 |-|
-> Updated  2023-03-20 17:30:35.200686, Test ACC: 0.90040 F1: 0.88728.
+| v0.4                                                                                  | F1          | *0.3696* | 0.9895 |+|
+| [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | 0.5902 |+|
+| [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | 0.9970 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7869 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / lcqmc     | *0.9548* | 0.8362 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / bq_corpus | *0.9775* | 0.8390 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | / paws-x    | *0.8960* | 0.6855 |-|
+| Total | | | 0.9197 |+|
+> Updated  2023-03-20 22:54:49.178402, Test ACC: 0.90340 F1: 0.89158.
 
 
 (2.2)
