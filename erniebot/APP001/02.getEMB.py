@@ -14,7 +14,7 @@ print(f"KEY {KEY}")
 
 
 #
-L, N = [], 3
+L, N = [], 10
 
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None).head(N)
 trainE1["T"] = "trainE1"
@@ -47,12 +47,12 @@ print(pd.value_counts(data["T"]))
 def get_Embedding(df):
     _X, _Y, _T = [], [], []
     for x1, x2, y, t in tqdm(zip(df[0], df[1], df[2], df["T"]), total=len(df)):
-        _X.append(f"""这句话'{x1}' 和 这句话'{x2}' 是一个意思么？只需要回答Y或N。""")
+        _X.append(f"""这句话'{x1}' 和 这句话'{x2}' 是一个意思么?""")
         _Y.append(y)
         _T.append(t)
 
     data = pd.DataFrame([erniebot.ChatCompletion.create(
-        model="ernie-bot",
+        model="ernie-bot-turbo",
         messages=[{'role': 'user', 'content': _x}],
     ).get_result() for _x in tqdm(_X, total=len(_X))])
     data["Y"] = _Y
