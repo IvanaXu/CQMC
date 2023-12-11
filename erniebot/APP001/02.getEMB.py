@@ -1,6 +1,7 @@
 #
 import os
 import time
+import hashlib
 import pickle
 import erniebot
 import numpy as np
@@ -22,13 +23,13 @@ L, N = [], None
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None)
 print(f"trainE1 {trainE1.shape}")
 trainE1["T"] = "trainE1"
-_, trainE1 = train_test_split(trainE1, test_size=2000, random_state=10086)
+_, trainE1 = train_test_split(trainE1, test_size=5000, random_state=10086)
 L.append(trainE1)
 
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None)
 print(f"trainE2 {trainE2.shape}")
 trainE2["T"] = "trainE2"
-_, trainE2 = train_test_split(trainE2, test_size=2000, random_state=10086)
+# _, trainE2 = train_test_split(trainE2, test_size=5000, random_state=10086)
 L.append(trainE2)
 
 test3 = pd.read_csv("../xfdata/3/test.tsv", sep="\t", header=None)
@@ -41,14 +42,14 @@ test5 = pd.read_csv("../xfdata/5/test.csv", sep="\t", header=None)
 print(f"test5 {test5.shape}")
 test5[2] = -1
 test5["T"] = "test5"
-# L.append(test5)
+L.append(test5)
 
 for task in ["bq_corpus", "lcqmc", "paws-x-zh"]:
     test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None)
     print(f"test6 {test6.shape}")
     test6[2] = -1
     test6["T"] = f"test6_{task}"
-    # L.append(test6)
+    L.append(test6)
 
 data = pd.concat(L)
 print(pd.value_counts(data["T"]))
@@ -62,8 +63,10 @@ def get_Embedding(df):
         _T.append(t)
 
     data = []
-    for _n, _x in tqdm(enumerate(_X), total=len(_X)):
-        _temp = f"/Volumes/ESSD/TEMP/{_n:09d}"
+    for _x in tqdm(_X):
+        hl = hashlib.md5()
+        hl.update(f"{_x[0]}\t{_x[1]}".encode(encoding='utf-8'))
+        _temp = f"/Users/ivan/Downloads/TEMP/{hl.hexdigest()}"
 
         if not os.path.exists(_temp):
             Embedding = erniebot.Embedding.create(
