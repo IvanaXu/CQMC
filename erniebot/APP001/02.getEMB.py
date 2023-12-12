@@ -47,9 +47,9 @@ L.append(test5)
 for task in [
     "bq_corpus",
     "lcqmc",
-    "paws-x-zh"
+    "paws-x-zh",
 ]:
-    test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None)
+    test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None).tail(2500)
     print(f"test6 {test6.shape}")
     test6[2] = -1
     test6["T"] = f"test6_{task}"
@@ -98,7 +98,7 @@ def get_Embedding(df):
         "trainE2",
         "test3",
         "test5",
-        "test6_bq_corpus", "test6_lcqmc", "test6_paws-x-zh",
+        # "test6_bq_corpus", "test6_lcqmc", "test6_paws-x-zh",
     ]:
         data[data["T"] == _type].to_csv(f"../user_data/cut_data/{_type}_EMB.csv", index=False)
 
