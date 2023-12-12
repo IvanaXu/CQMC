@@ -16,7 +16,9 @@ NNN = 384 * 2
 X_cols, Y_cols = [str(i) for i in range(NNN)], ["Y"]
 
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1_EMB.csv")
+print(pd.value_counts(trainE1["Y"]))
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2_EMB.csv")
+print(pd.value_counts(trainE2["Y"]))
 print(trainE1.shape, trainE2.shape)
 
 trainE1_X, trainE1_Y = trainE1[X_cols].values, trainE1[Y_cols].values
@@ -57,29 +59,9 @@ class PaiPai(pdl.nn.Layer):
         self.model = pdl.nn.Sequential(
             pdl.nn.Linear(in_features=NNN, out_features=512),
             pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
 
-            pdl.nn.Linear(in_features=512, out_features=256),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=256, out_features=128),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=128, out_features=64),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=64, out_features=32),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=32, out_features=16),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=16, out_features=8),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=8, out_features=4),
-            pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=4, out_features=2),
+            pdl.nn.Linear(in_features=512, out_features=2),
         )
 
     def forward(self, _x):
@@ -98,8 +80,8 @@ def get_feature(_encoder, _data_loader, _tqdm="", batch_size=BATCH):
 
 
 def fscore(y, _y):
-    y, _y = np.argmax(y, axis=1), np.argmax(_y, axis=1)
-    return f1_score(y_true=y, y_pred=_y, average="macro")
+    y, _y = y[:, 0], np.argmax(_y, axis=1)
+    return f1_score(y_true=y, y_pred=_y, average="binary")
 
 
 encoder = PaiPai()
@@ -117,8 +99,10 @@ opt = optimizer.Adam(
 
 
 mdl = "/Volumes/ESSD/TEMP/model/"
+os.system(f"rm -rf {mdl}/*")
+
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 1:
+if True:
     if os.path.exists(f"{mdl}/BEST.model.mdl"):
         print("> Load BEST.model.mdl.")
         encoder.set_state_dict(pdl.load(f"{mdl}/BEST.model.mdl"))
@@ -186,6 +170,8 @@ model = PaiPai()
 model.set_state_dict(pdl.load(f"{mdl}/model.mdl"))
 model.eval()
 
+
+# test3
 testO = pd.read_csv("../user_data/cut_data/test3_EMB.csv")
 print(f"testO {testO.shape}")
 testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
