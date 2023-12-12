@@ -9,11 +9,9 @@ from paddle import optimizer
 from sklearn.metrics import f1_score
 
 NW = 0
-TEST = 0.3
-SEED = 10086
-BATCH = 256
-NNN = 384 * 2
-X_cols, Y_cols = [str(i) for i in range(NNN)], ["Y"]
+BATCH = 1024
+NNN = 384
+X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
 
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1_EMB.csv")
 print(pd.value_counts(trainE1["Y"]))
@@ -57,15 +55,46 @@ class PaiPai(pdl.nn.Layer):
     def __init__(self):
         super(PaiPai, self).__init__()
         self.model = pdl.nn.Sequential(
-            pdl.nn.Linear(in_features=NNN, out_features=512),
+            pdl.nn.Linear(in_features=NNN, out_features=256),
             pdl.nn.ReLU(),
             pdl.nn.Dropout(0.5),
 
-            pdl.nn.Linear(in_features=512, out_features=2),
+            pdl.nn.Linear(in_features=256, out_features=128),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=128, out_features=64),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=64, out_features=32),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=32, out_features=16),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=16, out_features=8),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=8, out_features=4),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=4, out_features=2),
         )
+        self.b0 = self.create_parameter(
+            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
+        self.w1 = self.create_parameter(
+            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=1.0))
+        self.w2 = self.create_parameter(
+            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=1.0))
 
     def forward(self, _x):
-        return self.model(_x)
+        _x1, _x2 = _x[:, :NNN], _x[:, NNN:]
+        return self.model(self.w1 * _x1 + self.w2 * _x2 + self.b0)
 
 
 def get_feature(_encoder, _data_loader, _tqdm="", batch_size=BATCH):
@@ -89,7 +118,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=1)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -99,10 +128,10 @@ opt = optimizer.Adam(
 
 
 mdl = "/Volumes/ESSD/TEMP/model/"
-os.system(f"rm -rf {mdl}/*")
+# os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if True:
+if not os.path.exists(f"{mdl}/model.mdl"):
     if os.path.exists(f"{mdl}/BEST.model.mdl"):
         print("> Load BEST.model.mdl.")
         encoder.set_state_dict(pdl.load(f"{mdl}/BEST.model.mdl"))
@@ -111,7 +140,7 @@ if True:
         opt.set_state_dict(pdl.load(f"{mdl}/BEST.model.opt"))
 
     # Paras
-    NTASK, NSTOP = 999999, 100
+    NTASK, NSTOP = 99999999, 500
     start = time.perf_counter()
     current_best_metric = -np.inf
     max_bearable_epoch = NSTOP  # 设置早停的轮数为50，若连续50轮内验证集的评价指标没有提升，则停止训练
@@ -135,6 +164,12 @@ if True:
 
         # Valid
         encoder.eval()
+        # print(
+        #     f"\n"
+        #     f"b0: {encoder.b0.cpu().numpy().mean():.6f}, "
+        #     f"w1: {encoder.w1.cpu().numpy().mean():.6f}, "
+        #     f"w2: {encoder.w2.cpu().numpy().mean():.6f}, "
+        # )
         train_X, train_Y = get_feature(_encoder=encoder, _data_loader=trainE1_loaders, _tqdm="")
         valid_X, valid_Y = get_feature(_encoder=encoder, _data_loader=trainE2_loaders, _tqdm="")
 
@@ -173,7 +208,7 @@ model.eval()
 
 # test3
 testO = pd.read_csv("../user_data/cut_data/test3_EMB.csv")
-print(f"testO {testO.shape}")
+print(f"\ntestO/test3 {testO.shape}")
 testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
 testO_loaders = pdl.io.DataLoader(
     Dataset("testO", testO_X, testO_Y),
@@ -189,3 +224,25 @@ with open("../prediction_result/predict.json", "w") as f:
             f.write(f'{{"label": {_r}}}\n')
             _R.append(_r)
 print(pd.value_counts(_R))
+
+
+# test5
+testO = pd.read_csv("../user_data/cut_data/test5_EMB.csv")
+print(f"\ntestO/test5 {testO.shape}")
+testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
+testO_loaders = pdl.io.DataLoader(
+    Dataset("testO", testO_X, testO_Y),
+    return_list=True, shuffle=False, batch_size=BATCH, drop_last=True,
+    num_workers=0,
+)
+
+_R = []
+for (_x, _label) in testO_loaders:
+    for _r in model(_x).cpu().numpy():
+        _r = np.argmax(_r)
+        _R.append(_r)
+pd.DataFrame(_R).to_csv("../prediction_result/result5.csv", index=False, header=False)
+print(pd.value_counts(_R))
+
+
+
