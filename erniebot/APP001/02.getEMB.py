@@ -23,7 +23,7 @@ L, N = [], None
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None)
 print(f"trainE1 {trainE1.shape}")
 trainE1["T"] = "trainE1"
-_, trainE1 = train_test_split(trainE1, test_size=5000, random_state=10086)
+_, trainE1 = train_test_split(trainE1, test_size=10000, random_state=10086) # 5000/w00865, 10086
 L.append(trainE1)
 
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None)
@@ -49,7 +49,7 @@ for task in [
     "lcqmc",
     "paws-x-zh",
 ]:
-    test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None).tail(2500)
+    test6 = pd.read_csv(f"../xfdata/6/{task}/test.tsv", sep="\t", header=None)
     print(f"test6 {test6.shape}")
     test6[2] = -1
     test6["T"] = f"test6_{task}"
@@ -59,6 +59,7 @@ data = pd.concat(L)
 print(pd.value_counts(data["T"]))
 
 
+#
 def get_Embedding(df):
     _X, _Y, _T = [], [], []
     for x1, x2, y, t in tqdm(zip(df[0], df[1], df[2], df["T"]), total=len(df)):
@@ -93,13 +94,13 @@ def get_Embedding(df):
     data["T"] = _T
 
     #
-    for _type in [
+    for _type in tqdm([
         "trainE1",
         "trainE2",
         "test3",
         "test5",
-        # "test6_bq_corpus", "test6_lcqmc", "test6_paws-x-zh",
-    ]:
+        "test6_bq_corpus", "test6_lcqmc", "test6_paws-x-zh",
+    ], desc="OUT"):
         data[data["T"] == _type].to_csv(f"../user_data/cut_data/{_type}_EMB.csv", index=False)
 
 

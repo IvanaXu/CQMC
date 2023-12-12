@@ -206,7 +206,7 @@ model.set_state_dict(pdl.load(f"{mdl}/model.mdl"))
 model.eval()
 
 
-# test3
+# > test3
 testO = pd.read_csv("../user_data/cut_data/test3_EMB.csv")
 print(f"\ntestO/test3 {testO.shape}")
 testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
@@ -226,7 +226,7 @@ with open("../prediction_result/predict.json", "w") as f:
 print(pd.value_counts(_R))
 
 
-# test5
+# > test5
 testO = pd.read_csv("../user_data/cut_data/test5_EMB.csv")
 print(f"\ntestO/test5 {testO.shape}")
 testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
@@ -243,6 +243,27 @@ for (_x, _label) in testO_loaders:
         _R.append(_r)
 pd.DataFrame(_R).to_csv("../prediction_result/result5.csv", index=False, header=False)
 print(pd.value_counts(_R))
+
+
+# > test6
+for task in ["bq_corpus", "lcqmc", "paws-x-zh"]:
+    testO = pd.read_csv(f"../user_data/cut_data/test6_{task}_EMB.csv")
+    print(f"\ntestO/test6_{task} {testO.shape}")
+    testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
+    testO_loaders = pdl.io.DataLoader(
+        Dataset("testO", testO_X, testO_Y),
+        return_list=True, shuffle=False, batch_size=BATCH, drop_last=True,
+        num_workers=0,
+    )
+
+    _R = []
+    for (_x, _label) in testO_loaders:
+        for _r in model(_x).cpu().numpy():
+            _r = np.argmax(_r)
+            _R.append(_r)
+    pd.DataFrame(_R, columns=["prediction"]).reset_index()[["index", "prediction"]].to_csv(
+        f"../prediction_result/{task.replace('-zh', '')}.tsv", index=False, sep="\t")
+    print(task, pd.value_counts(_R))
 
 
 
