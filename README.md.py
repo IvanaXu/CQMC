@@ -64,7 +64,7 @@ with open("README.md", "w") as f:
         
         #
         if "Updated" in i:
-            i = f"{i[:10]} {str(datetime.datetime.now())}, Test {test}.\n"
+            i = f"{i[:10]} {str(datetime.datetime.now())}, Test {test}, By [erniebot](./erniebot).\n"
         
         f.write(i)
 
