@@ -204,6 +204,7 @@ if not os.path.exists(f"{mdl}/model.mdl"):
 model = PaiPai()
 model.set_state_dict(pdl.load(f"{mdl}/model.mdl"))
 model.eval()
+BATCH = 1
 
 
 # > test3
@@ -213,7 +214,7 @@ testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
 testO_loaders = pdl.io.DataLoader(
     Dataset("testO", testO_X, testO_Y),
     return_list=True, shuffle=False, batch_size=BATCH, drop_last=True,
-    num_workers=0,
+    num_workers=NW,
 )
 
 _R = []
@@ -224,6 +225,7 @@ with open("../prediction_result/predict.json", "w") as f:
             f.write(f'{{"label": {_r}}}\n')
             _R.append(_r)
 print(pd.value_counts(_R))
+assert len(_R) == testO.shape[0]
 
 
 # > test5
@@ -233,7 +235,7 @@ testO_X, testO_Y = testO[X_cols].values, testO[Y_cols].values
 testO_loaders = pdl.io.DataLoader(
     Dataset("testO", testO_X, testO_Y),
     return_list=True, shuffle=False, batch_size=BATCH, drop_last=True,
-    num_workers=0,
+    num_workers=NW,
 )
 
 _R = []
@@ -243,6 +245,7 @@ for (_x, _label) in testO_loaders:
         _R.append(_r)
 pd.DataFrame(_R).to_csv("../prediction_result/result5.csv", index=False, header=False)
 print(pd.value_counts(_R))
+assert len(_R) == testO.shape[0]
 
 
 # > test6
@@ -253,7 +256,7 @@ for task in ["bq_corpus", "lcqmc", "paws-x-zh"]:
     testO_loaders = pdl.io.DataLoader(
         Dataset("testO", testO_X, testO_Y),
         return_list=True, shuffle=False, batch_size=BATCH, drop_last=True,
-        num_workers=0,
+        num_workers=NW,
     )
 
     _R = []
@@ -264,6 +267,7 @@ for task in ["bq_corpus", "lcqmc", "paws-x-zh"]:
     pd.DataFrame(_R, columns=["prediction"]).reset_index()[["index", "prediction"]].to_csv(
         f"../prediction_result/{task.replace('-zh', '')}.tsv", index=False, sep="\t")
     print(task, pd.value_counts(_R))
+    assert len(_R) == testO.shape[0]
 
 
 
