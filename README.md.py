@@ -8,12 +8,12 @@ p2 = "Epoch:51"
 scoreL = """
 -1
 -1
-0.6382
-0.6948	
-0.6148	
-0.5115
+0.6209	
+0.6961	
+0.6025	
+0.4905
 """
-test = "ACC: -1 F1: 0.6957"
+test = "ACC: -1 F1: 0.7003"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0

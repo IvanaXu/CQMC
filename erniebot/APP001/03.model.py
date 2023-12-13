@@ -128,7 +128,7 @@ opt = optimizer.Adam(
 
 
 mdl = "/Volumes/ESSD/TEMP/model/"
-# os.system(f"rm -rf {mdl}/*")
+os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if not os.path.exists(f"{mdl}/model.mdl") or True:
