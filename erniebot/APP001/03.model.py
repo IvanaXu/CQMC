@@ -118,7 +118,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.01, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -128,7 +128,7 @@ opt = optimizer.Adam(
 
 
 mdl = "/Volumes/ESSD/TEMP/model/"
-os.system(f"rm -rf {mdl}/*")
+# os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if not os.path.exists(f"{mdl}/model.mdl") or True:

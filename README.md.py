@@ -3,8 +3,8 @@ import datetime
 
 os.system("clear")
 
-p1 = "#7"
-p2 = "Epoch:51"
+p1 = "#12"
+p2 = "Erniebot"
 scoreL = """
 -1
 -1
