@@ -131,7 +131,7 @@ mdl = "/Volumes/ESSD/TEMP/model/"
 # os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if not os.path.exists(f"{mdl}/model.mdl") or True:
+if not os.path.exists(f"{mdl}/model.mdl"):
     if os.path.exists(f"{mdl}/BEST.model.mdl"):
         print("> Load BEST.model.mdl.")
         encoder.set_state_dict(pdl.load(f"{mdl}/BEST.model.mdl"))
