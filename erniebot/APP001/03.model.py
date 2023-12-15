@@ -9,7 +9,7 @@ from paddle import optimizer
 from sklearn.metrics import f1_score
 
 NW = 0
-BATCH = 256
+BATCH = 512
 NNN = 384
 X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
 
@@ -118,7 +118,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.01, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.0001, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -128,7 +128,7 @@ opt = optimizer.Adam(
 
 
 mdl = "/Volumes/ESSD/TEMP/model/"
-# os.system(f"rm -rf {mdl}/*")
+os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if not os.path.exists(f"{mdl}/model.mdl"):
