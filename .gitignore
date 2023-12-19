@@ -14,3 +14,4 @@ code/.ipynb_checkpoints/*
 prediction_result/.ipynb_checkpoints/*
 
 erniebot/APP001/config.py
+erniebot/APP001/__pycache__/*
