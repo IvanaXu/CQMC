@@ -127,7 +127,7 @@ opt = optimizer.Adam(
 )
 
 
-mdl = "/Volumes/ESSD/TEMP/model/"
+mdl = "/data/model/"
 os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
