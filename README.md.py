@@ -8,12 +8,12 @@ p2 = "Erniebot"
 scoreL = """
 -1
 -1
-0.6506	
-0.7199	
-0.629	
-0.5165
+0.6798	
+0.7326	
+0.6391	
+0.5050
 """
-test = "ACC: -1 F1: 0.7141"
+test = "ACC: -1 F1: 0.7136"
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0
@@ -71,5 +71,3 @@ with open("README.md", "w") as f:
 #
 os.system(f"""git add * && git commit -m "{p1} {p2} /{score:.4f} version" && git push""")
         
-
-
