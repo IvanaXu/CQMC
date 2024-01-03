@@ -36,3 +36,10 @@ then
     rm -rf result6.zip
     zip result6.zip bq_corpus.tsv lcqmc.tsv paws-x.tsv
 fi
+
+if [ $1 -eq 4 ]
+then
+    echo 4
+    cd ../
+    /data/soft/python3/bin/python README.md.py
+fi
