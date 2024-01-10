@@ -20,10 +20,10 @@ print(f"KEY {KEY}")
 #
 L, N = [], None
 
-trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None)
+trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None) # 1181605
 print(f"trainE1 {trainE1.shape}")
 trainE1["T"] = "trainE1"
-_, trainE1 = train_test_split(trainE1, test_size=100000, random_state=10086)
+_, trainE1 = train_test_split(trainE1, test_size=181605, random_state=10086)
 L.append(trainE1)
 
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None)
@@ -73,15 +73,18 @@ def get_Embedding(df):
         _temp = f"/data/temp/{hl.hexdigest()}"
 
         if not os.path.exists(_temp):
-            Embedding = erniebot.Embedding.create(
-                model='ernie-text-embedding',
-                input=_x
-            ).get_result()
-            time.sleep(1)
+            try:
+                Embedding = erniebot.Embedding.create(
+                    model='ernie-text-embedding',
+                    input=_x
+                ).get_result()
+                time.sleep(1)
 
-            EMB = np.concatenate(Embedding, axis=0)
-            with open(_temp, "wb") as f:
-                pickle.dump(EMB, f)
+                EMB = np.concatenate(Embedding, axis=0)
+                with open(_temp, "wb") as f:
+                    pickle.dump(EMB, f)
+            except:
+                print("Too Long...")
         else:
             with open(_temp, "rb") as f:
                 EMB = pickle.load(f)
