@@ -91,19 +91,31 @@ def get_Embedding(df):
         #
         data.append(EMB)
 
-    data = pd.DataFrame(data)
-    data["Y"] = _Y
-    data["T"] = _T
+    # data = pd.DataFrame(data)
+    # data["Y"] = _Y
+    # data["T"] = _T
 
     #
-    for _type in tqdm([
+    N = 768
+    for _type in [
         "trainE1",
         "trainE2",
         # "test3",
         # "test5",
-        "test6_bq_corpus", "test6_lcqmc", "test6_paws-x-zh",
-    ], desc="OUT"):
-        data[data["T"] == _type].to_csv(f"../user_data/cut_data/{_type}_EMB.csv", index=False)
+        "test6_bq_corpus", 
+        "test6_lcqmc", 
+        "test6_paws-x-zh",
+    ]:
+        # data[data["T"] == _type].to_csv(f"../user_data/cut_data/{_type}_EMB.csv", index=False)
+        with open(f"../user_data/cut_data/{_type}_EMB.csv", "w") as f:
+            f.write(f'{",".join([str(i) for i in range(N)])},Y,T\n')
+            for _d, _y, _t in tqdm(
+                zip(data, _Y, _T), 
+                desc=_type,
+                total=len(data)
+            ):
+                if _type == _t:
+                    f.write(f'{",".join([str(_d[i]) for i in range(N)])},{_y},{_t}\n')
 
 
 get_Embedding(df=data)
