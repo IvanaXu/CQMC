@@ -23,7 +23,7 @@ L, N = [], None
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None) # 1181605
 print(f"trainE1 {trainE1.shape}")
 trainE1["T"] = "trainE1"
-_, trainE1 = train_test_split(trainE1, test_size=181605, random_state=10086)
+_, trainE1 = train_test_split(trainE1, test_size=100000 * 2 + 181605, random_state=10086)
 L.append(trainE1)
 
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None)
@@ -83,8 +83,8 @@ def get_Embedding(df):
                 EMB = np.concatenate(Embedding, axis=0)
                 with open(_temp, "wb") as f:
                     pickle.dump(EMB, f)
-            except:
-                print("Too Long...")
+            except Exception as e:
+                print(e)
         else:
             with open(_temp, "rb") as f:
                 EMB = pickle.load(f)
@@ -100,8 +100,8 @@ def get_Embedding(df):
     for _type in [
         "trainE1",
         "trainE2",
-        # "test3",
-        # "test5",
+        "test3",
+        "test5",
         "test6_bq_corpus", 
         "test6_lcqmc", 
         "test6_paws-x-zh",
