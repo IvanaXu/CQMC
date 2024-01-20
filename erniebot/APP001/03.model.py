@@ -8,7 +8,7 @@ from tqdm import tqdm
 from paddle import optimizer
 from sklearn.metrics import f1_score
 
-NW = 0
+NW = 10
 BATCH = 512
 NNN = 384
 X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
