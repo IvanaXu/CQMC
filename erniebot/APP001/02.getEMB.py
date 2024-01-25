@@ -23,7 +23,7 @@ L, N = [], None
 trainE1 = pd.read_csv("../user_data/cut_data/trainE1.csv", sep="\t", header=None) # 1181605
 print(f"trainE1 {trainE1.shape}")
 trainE1["T"] = "trainE1"
-_, trainE1 = train_test_split(trainE1, test_size=100000 * 3 + 181605, random_state=10086)
+_, trainE1 = train_test_split(trainE1, test_size=100000 * 4 + 181605, random_state=10086)
 L.append(trainE1)
 
 trainE2 = pd.read_csv("../user_data/cut_data/trainE2.csv", sep="\t", header=None)
