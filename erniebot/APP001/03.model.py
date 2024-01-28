@@ -128,16 +128,16 @@ opt = optimizer.Adam(
 
 
 mdl = "../../data/model/"
-os.system(f"rm -rf {mdl}/*")
+# os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 1:
+if 0:
     if os.path.exists(encoder_pkl):
-        print("> Load model.mdl.")
+        print(f"> Load model.mdl {encoder_pkl}.")
         encoder.set_state_dict(pdl.load(encoder_pkl))
     
     if os.path.exists(opt_pkl):
-        print("> Load model.opt.")
+        print(f"> Load model.opt {opt_pkl}.")
         opt.set_state_dict(pdl.load(opt_pkl))
 
     # Paras
