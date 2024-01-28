@@ -70,7 +70,7 @@ def get_Embedding(df):
     for _x in tqdm(_X):
         hl = hashlib.md5()
         hl.update(f"{_x[0]}\t{_x[1]}".encode(encoding='utf-8'))
-        _temp = f"/data/temp/{hl.hexdigest()}"
+        _temp = f"../../data/temp/{hl.hexdigest()}"
 
         if not os.path.exists(_temp):
             try:

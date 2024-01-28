@@ -127,8 +127,8 @@ opt = optimizer.Adam(
 )
 
 
-mdl = "/data/model/"
-# os.system(f"rm -rf {mdl}/*")
+mdl = "../../data/model/"
+os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if 1:
