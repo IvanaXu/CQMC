@@ -34,8 +34,8 @@ d5 = pd.read_csv("../xfdata/5/train.csv", sep="\t", header=None)
 # 6/千言数据集：文本相似度
 d6_1 = pd.read_csv(
     "../xfdata/6/bq_corpus/train.tsv", sep="\t", header=None, 
-    # on_bad_lines='skip',
-    error_bad_lines=False,
+    on_bad_lines='skip',
+    # error_bad_lines=False,
 )
 d6_2 = pd.read_csv("../xfdata/6/bq_corpus/dev.tsv", sep="\t", header=None)
 d6_3 = pd.read_csv("../xfdata/6/lcqmc/train.tsv", sep="\t", header=None)

@@ -8,8 +8,8 @@ from tqdm import tqdm
 from paddle import optimizer
 from sklearn.metrics import f1_score
 
-NW = 10
-BATCH = 512
+NW = 8
+BATCH = 1024
 NNN = 384
 X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
 
@@ -131,7 +131,7 @@ mdl = "../../data/model/"
 # os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 0:
+if 1:
     if os.path.exists(encoder_pkl):
         print(f"> Load model.mdl {encoder_pkl}.")
         encoder.set_state_dict(pdl.load(encoder_pkl))
