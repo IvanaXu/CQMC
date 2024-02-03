@@ -9,7 +9,7 @@ from paddle import optimizer
 from sklearn.metrics import f1_score
 
 NW = 8
-BATCH = 1024
+BATCH = 5000
 NNN = 384
 X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
 
@@ -57,31 +57,31 @@ class PaiPai(pdl.nn.Layer):
         self.model = pdl.nn.Sequential(
             pdl.nn.Linear(in_features=NNN, out_features=256),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=256, out_features=128),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=128, out_features=64),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=64, out_features=32),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=32, out_features=16),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=16, out_features=8),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=8, out_features=4),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=4, out_features=2),
         )
