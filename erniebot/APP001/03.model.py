@@ -6,7 +6,7 @@ import pandas as pd
 import paddle as pdl
 from tqdm import tqdm
 from paddle import optimizer
-from sklearn.metrics import f1_score
+from sklearn.metrics import f1_score, accuracy_score
 
 NW = 8
 BATCH = 5000
@@ -57,31 +57,31 @@ class PaiPai(pdl.nn.Layer):
         self.model = pdl.nn.Sequential(
             pdl.nn.Linear(in_features=NNN, out_features=256),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=256, out_features=128),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=128, out_features=64),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=64, out_features=32),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=32, out_features=16),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=16, out_features=8),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=8, out_features=4),
             pdl.nn.ReLU(),
-            pdl.nn.Dropout(0.1),
+            # pdl.nn.Dropout(0.1),
 
             pdl.nn.Linear(in_features=4, out_features=2),
         )
@@ -108,6 +108,11 @@ def get_feature(_encoder, _data_loader, _tqdm="", batch_size=BATCH):
     return np.concatenate(_X, axis=0), np.concatenate(_Y, axis=0)
 
 
+def ascore(y, _y):
+    y, _y = y[:, 0], np.argmax(_y, axis=1)
+    return accuracy_score(y_true=y, y_pred=_y)
+
+
 def fscore(y, _y):
     y, _y = y[:, 0], np.argmax(_y, axis=1)
     return f1_score(y_true=y, y_pred=_y, average="binary")
@@ -118,7 +123,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.0001, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -128,7 +133,7 @@ opt = optimizer.Adam(
 
 
 mdl = "../../data/model/"
-# os.system(f"rm -rf {mdl}/*")
+os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if 1:
@@ -176,6 +181,9 @@ if 1:
 
         score_train = fscore(train_Y, train_X)
         score_valid = fscore(valid_Y, valid_X)
+        ascore_train = ascore(train_Y, train_X)
+        ascore_valid = ascore(valid_Y, valid_X)
+
         _score = score_valid
         score = _score
 
@@ -193,7 +201,8 @@ if 1:
         print(
             f" |Epoch {epoch / NTASK:7.2%} |Time {(time.perf_counter() - start):10.2f}s"
             f" |Speed {(time.perf_counter() - start) / epoch:6.2f}s/it"
-            f" |Now @{epoch:04d} T/{score_train:12.4f} V/{score_valid:12.4f} S/{score:12.4f}"
+            f" |Now @{epoch:04d} "
+            f" T/V a {ascore_train:.4f}/{ascore_valid:.4f} f {score_train:.4f}/{score_valid:.4f} S/{score:12.4f}"
             f" |Best @{current_best_epoch:03d} {current_best_metric:12.4f} {(epoch - current_best_epoch) / max_bearable_epoch:7.2%}"
             f" {'MAX' if current_best_epoch == epoch else '   '}"
             f" |-{(int(score * 50) * '-') + '>':51s}|",
