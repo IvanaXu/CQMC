@@ -57,40 +57,26 @@ class PaiPai(pdl.nn.Layer):
         self.model = pdl.nn.Sequential(
             pdl.nn.Linear(in_features=NNN, out_features=256),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=256, out_features=128),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=128, out_features=64),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=64, out_features=32),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=32, out_features=16),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=16, out_features=8),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=8, out_features=4),
             pdl.nn.ReLU(),
-            # pdl.nn.Dropout(0.1),
-
             pdl.nn.Linear(in_features=4, out_features=2),
         )
         self.b0 = self.create_parameter(
             [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
         self.w1 = self.create_parameter(
-            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=1.0))
+            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
         self.w2 = self.create_parameter(
-            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=1.0))
+            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
 
     def forward(self, _x):
         _x1, _x2 = _x[:, :NNN], _x[:, NNN:]
@@ -123,7 +109,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.0001, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -184,7 +170,7 @@ if 1:
         ascore_train = ascore(train_Y, train_X)
         ascore_valid = ascore(valid_Y, valid_X)
 
-        _score = score_valid
+        _score = ascore_valid #
         score = _score
 
         if score > current_best_metric:
@@ -202,10 +188,10 @@ if 1:
             f" |Epoch {epoch / NTASK:7.2%} |Time {(time.perf_counter() - start):10.2f}s"
             f" |Speed {(time.perf_counter() - start) / epoch:6.2f}s/it"
             f" |Now @{epoch:04d} "
-            f" T/V a {ascore_train:.4f}/{ascore_valid:.4f} f {score_train:.4f}/{score_valid:.4f} S/{score:12.4f}"
-            f" |Best @{current_best_epoch:03d} {current_best_metric:12.4f} {(epoch - current_best_epoch) / max_bearable_epoch:7.2%}"
+            f" T/V ACC:{ascore_train:.4f}/{ascore_valid:.4f},F1:{score_train:.4f}/{score_valid:.4f} S/{score:.4f}"
+            f" |Best @{current_best_epoch:03d} {current_best_metric:.4f} {(epoch - current_best_epoch) / max_bearable_epoch:7.2%}"
             f" {'MAX' if current_best_epoch == epoch else '   '}"
-            f" |-{(int(score * 50) * '-') + '>':51s}|",
+            f" |-{(int(score * 20) * '-') + '>':21s}|",
         )
         if epoch > current_best_epoch + max_bearable_epoch:
             break
