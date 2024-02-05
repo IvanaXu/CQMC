@@ -167,10 +167,10 @@ if 1:
 
         ascore_train, ascore_valid = ascore(train_Y, train_X), ascore(valid_Y, valid_X)
         fscore_train, fscore_valid = fscore(train_Y, train_X), fscore(valid_Y, valid_X)    
-        score = ascore_valid #
+        score = (ascore_train + fscore_train)/2 * 0.3 + (ascore_valid + fscore_valid)/2 * 0.7
         
         if score > current_best_metric:
-            scoreR = f"{mdl}/ACC_{ascore_train:.4f}_{ascore_valid:.4f},F1_{fscore_train:.4f}_{fscore_valid:.4f}"
+            scoreR = f"{mdl}/Score-{score:.4f},ACC-{ascore_train:.4f}_{ascore_valid:.4f},F1-{fscore_train:.4f}_{fscore_valid:.4f}"
             # 保存score最大时的模型权重
             current_best_metric = score
             current_best_epoch = epoch
