@@ -8,8 +8,8 @@ from tqdm import tqdm
 from paddle import optimizer
 from sklearn.metrics import f1_score, accuracy_score
 
-NW = 8
-BATCH = 5000
+NW = 0
+BATCH = 512
 NNN = 384
 X_cols, Y_cols = [str(i) for i in range(NNN*2)], ["Y"]
 
@@ -119,7 +119,7 @@ opt = optimizer.Adam(
 
 
 mdl = "../../data/model/"
-os.system(f"rm -rf {mdl}/*")
+# os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
 if 1:
@@ -132,7 +132,7 @@ if 1:
         opt.set_state_dict(pdl.load(opt_pkl))
 
     # Paras
-    NTASK, NSTOP = 99999999, 100
+    NTASK, NSTOP = 99999999, 200
     start = time.perf_counter()
     current_best_metric = -np.inf
     max_bearable_epoch = NSTOP  # 设置早停的轮数为50，若连续50轮内验证集的评价指标没有提升，则停止训练
@@ -165,16 +165,12 @@ if 1:
         train_X, train_Y = get_feature(_encoder=encoder, _data_loader=trainE1_loaders, _tqdm="")
         valid_X, valid_Y = get_feature(_encoder=encoder, _data_loader=trainE2_loaders, _tqdm="")
 
-        score_train = fscore(train_Y, train_X)
-        score_valid = fscore(valid_Y, valid_X)
-        ascore_train = ascore(train_Y, train_X)
-        ascore_valid = ascore(valid_Y, valid_X)
-
-        _score = ascore_valid #
-        score = _score
-
+        ascore_train, ascore_valid = ascore(train_Y, train_X), ascore(valid_Y, valid_X)
+        fscore_train, fscore_valid = fscore(train_Y, train_X), fscore(valid_Y, valid_X)    
+        score = ascore_valid #
+        
         if score > current_best_metric:
-            scoreR = f"{mdl}/s{_score:.4f}_t{score_train:.4f}_v{score_valid:.4f}"
+            scoreR = f"{mdl}/ACC_{ascore_train:.4f}_{ascore_valid:.4f},F1_{fscore_train:.4f}_{fscore_valid:.4f}"
             # 保存score最大时的模型权重
             current_best_metric = score
             current_best_epoch = epoch
@@ -188,7 +184,7 @@ if 1:
             f" |Epoch {epoch / NTASK:7.2%} |Time {(time.perf_counter() - start):10.2f}s"
             f" |Speed {(time.perf_counter() - start) / epoch:6.2f}s/it"
             f" |Now @{epoch:04d} "
-            f" T/V ACC:{ascore_train:.4f}/{ascore_valid:.4f},F1:{score_train:.4f}/{score_valid:.4f} S/{score:.4f}"
+            f" T/V ACC:{ascore_train:.4f}/{ascore_valid:.4f},F1:{fscore_train:.4f}/{fscore_valid:.4f} S/{score:.4f}"
             f" |Best @{current_best_epoch:03d} {current_best_metric:.4f} {(epoch - current_best_epoch) / max_bearable_epoch:7.2%}"
             f" {'MAX' if current_best_epoch == epoch else '   '}"
             f" |-{(int(score * 20) * '-') + '>':21s}|",
