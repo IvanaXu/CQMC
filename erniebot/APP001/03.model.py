@@ -70,7 +70,7 @@ class PaiPai(pdl.nn.Layer):
             pdl.nn.Linear(in_features=8, out_features=4),
             pdl.nn.ReLU(),
             pdl.nn.Linear(in_features=4, out_features=2),
-            pdl.nn.Dropout(0.5),
+            pdl.nn.Dropout(0.1),
         )
         self.b0 = self.create_parameter(
             [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
