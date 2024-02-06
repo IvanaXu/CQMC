@@ -132,7 +132,7 @@ if 1:
         opt.set_state_dict(pdl.load(opt_pkl))
 
     # Paras
-    NTASK, NSTOP = 99999999, 200
+    NTASK, NSTOP = 99999999, 300
     start = time.perf_counter()
     current_best_metric = -np.inf
     max_bearable_epoch = NSTOP  # 设置早停的轮数为50，若连续50轮内验证集的评价指标没有提升，则停止训练
