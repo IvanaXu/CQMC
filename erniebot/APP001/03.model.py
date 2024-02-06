@@ -123,7 +123,7 @@ mdl = "../../data/model/"
 # os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 1:
+if 0:
     if os.path.exists(encoder_pkl):
         print(f"> Load model.mdl {encoder_pkl}.")
         encoder.set_state_dict(pdl.load(encoder_pkl))
