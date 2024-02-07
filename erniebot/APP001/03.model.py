@@ -123,7 +123,7 @@ mdl = "../../data/model/"
 # os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 0:
+if 1:
     if os.path.exists(encoder_pkl):
         print(f"> Load model.mdl {encoder_pkl}.")
         encoder.set_state_dict(pdl.load(encoder_pkl))
@@ -133,7 +133,7 @@ if 0:
         opt.set_state_dict(pdl.load(opt_pkl))
 
     # Paras
-    NTASK, NSTOP = 99999999, 300
+    NTASK, NSTOP = 99999999, 400
     start = time.perf_counter()
     current_best_metric = -np.inf
     max_bearable_epoch = NSTOP  # 设置早停的轮数为50，若连续50轮内验证集的评价指标没有提升，则停止训练
