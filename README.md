@@ -49,12 +49,12 @@ Python 3.7.4，详见requirements.txt
 |--|-|-|-|-|
 | [TASK-3](http://contest.aicubes.cn/#/detail?topicId=23)                               | F1          | *0.6365* | -1.0000 |-|
 | [TASK-5](https://challenge.xfyun.cn/topic/info?type=text-match&option=ssgy)           | ACC         | *0.9998* | -1.0000 |-|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7290 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -lcqmc      | *0.9548* | 0.8192 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -bq_corpus  | *0.9775* | 0.8069 |+|
-| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -paws-x     | *0.8960* | 0.5610 |+|
-| Total | | | -0.5994 |-|
-> Updated  2024-02-07 19:21:52.228174, Test 0.8522,ACC-0.9372_0.8277,F1-0.9299_0.8071, By [erniebot](./erniebot).
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | ACC         | *0.9428* | 0.7160 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -lcqmc      | *0.9548* | 0.8168 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -bq_corpus  | *0.9775* | 0.7996 |-|
+| [TASK-6](https://aistudio.baidu.com/aistudio/competition/detail/45/0/task-definition) | -paws-x     | *0.8960* | 0.5315 |-|
+| Total | | | -0.6040 |-|
+> Updated  2024-02-08 12:10:38.142467, Test 0.8627,ACC-0.9582_0.8320,F1-0.9539_0.8132, By [erniebot](./erniebot).
 
 
 (2.2)
