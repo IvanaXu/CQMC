@@ -55,6 +55,9 @@ class PaiPai(pdl.nn.Layer):
     def __init__(self):
         super(PaiPai, self).__init__()
         self.model = pdl.nn.Sequential(
+            pdl.nn.Linear(in_features=NNN*2, out_features=NNN),
+            pdl.nn.ReLU(),
+
             pdl.nn.Linear(in_features=NNN, out_features=256),
             pdl.nn.ReLU(),
             pdl.nn.Linear(in_features=256, out_features=128),
@@ -80,8 +83,9 @@ class PaiPai(pdl.nn.Layer):
             [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
 
     def forward(self, _x):
-        _x1, _x2 = _x[:, :NNN], _x[:, NNN:]
-        return self.model(self.w1 * _x1 + self.w2 * _x2 + self.b0)
+        # _x1, _x2 = _x[:, :NNN], _x[:, NNN:]
+        # return self.model(self.w1 * _x1 + self.w2 * _x2 + self.b0)
+        return self.model(_x)
 
 
 def get_feature(_encoder, _data_loader, _tqdm="", batch_size=BATCH):
@@ -110,7 +114,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.0001, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
@@ -123,7 +127,7 @@ mdl = "../../data/model/"
 # os.system(f"rm -rf {mdl}/*")
 
 opt_pkl, encoder_pkl = f"{mdl}/model.opt", f"{mdl}/model.mdl"
-if 0:
+if 1:
     if os.path.exists(encoder_pkl):
         print(f"> Load model.mdl {encoder_pkl}.")
         encoder.set_state_dict(pdl.load(encoder_pkl))
