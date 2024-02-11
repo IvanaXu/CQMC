@@ -118,7 +118,7 @@ scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=1)
 opt = optimizer.Adam(
     scheduler,
     parameters=encoder.parameters(),
-    weight_decay=1e-5,
+    weight_decay=1e-3,
 )
 
 
