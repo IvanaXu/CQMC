@@ -55,10 +55,9 @@ class PaiPai(pdl.nn.Layer):
     def __init__(self):
         super(PaiPai, self).__init__()
         self.model = pdl.nn.Sequential(
-            pdl.nn.Linear(in_features=NNN*2, out_features=NNN),
+            pdl.nn.Linear(in_features=NNN*2, out_features=512),
             pdl.nn.ReLU(),
-
-            pdl.nn.Linear(in_features=NNN, out_features=256),
+            pdl.nn.Linear(in_features=512, out_features=256),
             pdl.nn.ReLU(),
             pdl.nn.Linear(in_features=256, out_features=128),
             pdl.nn.ReLU(),
@@ -73,14 +72,14 @@ class PaiPai(pdl.nn.Layer):
             pdl.nn.Linear(in_features=8, out_features=4),
             pdl.nn.ReLU(),
             pdl.nn.Linear(in_features=4, out_features=2),
-            pdl.nn.Dropout(0.1),
+            pdl.nn.Dropout(0.01),
         )
-        self.b0 = self.create_parameter(
-            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
-        self.w1 = self.create_parameter(
-            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
-        self.w2 = self.create_parameter(
-            [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
+        # self.b0 = self.create_parameter(
+        #     [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
+        # self.w1 = self.create_parameter(
+        #     [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
+        # self.w2 = self.create_parameter(
+        #     [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.5))
 
     def forward(self, _x):
         # _x1, _x2 = _x[:, :NNN], _x[:, NNN:]
@@ -114,7 +113,7 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=10)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=1)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
