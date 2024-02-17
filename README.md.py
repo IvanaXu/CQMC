@@ -8,12 +8,13 @@ p2 = "Erniebot"
 scoreL = """
 -1
 -1
-0.8569	
-0.8257	
-0.7392	
-0.5350
+0.8625	
+0.8263	
+0.7484	
+0.5565	
 """
-test = "Score-0.8405,ACC-0.8675_0.8388,F1-0.8553_0.8243"
+test = "Score-0.8356,ACC-0.8641_0.8401,F1-0.8451_0.8148.mdl"
+
 
 scoreL = [float(i) for i in scoreL.split("\n") if i]
 score = (scoreL[0]/0.6365 + scoreL[1]/0.9998 + scoreL[4]/0.9428)/3.0

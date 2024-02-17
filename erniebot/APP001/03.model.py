@@ -70,7 +70,7 @@ class PaiPai(pdl.nn.Layer):
             pdl.nn.Linear(in_features=16, out_features=4),
             pdl.nn.ReLU(),
             pdl.nn.Dropout(0.5),
-            
+
             pdl.nn.Linear(in_features=4, out_features=2),
             pdl.nn.ReLU(),
             pdl.nn.Dropout(0.5),
