@@ -55,24 +55,25 @@ class PaiPai(pdl.nn.Layer):
     def __init__(self):
         super(PaiPai, self).__init__()
         self.model = pdl.nn.Sequential(
-            pdl.nn.Linear(in_features=NNN*2, out_features=512),
+            pdl.nn.Linear(in_features=NNN*2, out_features=256),
             pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=512, out_features=256),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=256, out_features=64),
             pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=256, out_features=128),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=64, out_features=16),
             pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=128, out_features=64),
+            pdl.nn.Dropout(0.5),
+
+            pdl.nn.Linear(in_features=16, out_features=4),
             pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=64, out_features=32),
-            pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=32, out_features=16),
-            pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=16, out_features=8),
-            pdl.nn.ReLU(),
-            pdl.nn.Linear(in_features=8, out_features=4),
-            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
+            
             pdl.nn.Linear(in_features=4, out_features=2),
-            pdl.nn.Dropout(0.01),
+            pdl.nn.ReLU(),
+            pdl.nn.Dropout(0.5),
         )
         # self.b0 = self.create_parameter(
         #     [NNN], is_bias=True, default_initializer=pdl.nn.initializer.Constant(value=0.0))
@@ -113,12 +114,12 @@ encoder = PaiPai()
 # 损失函数
 criterion = pdl.nn.loss.MSELoss()
 # 余弦退火学习率 learning_rate=1e-3
-scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=1)
+scheduler = optimizer.lr.CosineAnnealingDecay(learning_rate=0.001, T_max=5)
 # 优化器Adam
 opt = optimizer.Adam(
     scheduler,
     parameters=encoder.parameters(),
-    weight_decay=1e-3,
+    weight_decay=1e-6,
 )
 
 
@@ -136,7 +137,7 @@ if 1:
         opt.set_state_dict(pdl.load(opt_pkl))
 
     # Paras
-    NTASK, NSTOP = 99999999, 400
+    NTASK, NSTOP = 99999999, 200
     start = time.perf_counter()
     current_best_metric = -np.inf
     max_bearable_epoch = NSTOP  # 设置早停的轮数为50，若连续50轮内验证集的评价指标没有提升，则停止训练
